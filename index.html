@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="#000000" name="theme-color"/>
+<meta name="description" content="George Mousa Online Fitness Training — برامج تدريب وتغذية مخصصة، متابعة أونلاين، حاسبة GM المجانية، وبرامج تدريب رقمية.">
+<title>George Mousa — Online Fitness Training</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<meta content="تدريب أونلاين بخطة تدريب وتغذية مخصصة، متابعة أسبوعية، تطبيق تتبع التقدم، ودعم عبر واتساب." name="description"/>
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<link rel="icon" type="image/png" href="assets/images/logo.png">
+<link rel="preload" as="image" href="assets/images/hero-systems.webp">
+</head>
+<body>
+<header>
+<div class="container navbar">
+<a href="#top"><img alt="George Mousa Online Fitness Training" class="logo" src="assets/images/logo.png"/></a>
+<nav class="navlinks">
+<a href="#calculator">الحاسبة المجانية</a><a href="#packages">الباقات</a><a href="#results">النتائج</a>
+<a href="#store">المتجر</a><a href="#about">عن الكوتش</a><a href="#faq">الأسئلة</a>
+</nav>
+<a class="btn whatsapp" href="https://wa.me/963987461750?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%83%D9%88%D8%AA%D8%B4%20%D8%AC%D9%88%D8%B1%D8%AC%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D9%85%D8%B9%D8%B1%D9%81%D8%A9%20%D8%A7%D9%84%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9%20%D9%84%D9%8A." target="_blank">واتساب</a>
+</div>
+</header>
+<main id="top">
+<section class="hero">
+<div class="container hero-grid">
+<div>
+<div class="eyebrow">GEORGE MOUSA — ONLINE FITNESS TRAINING</div>
+<h1>حوّل جسمك بخطة <span style="color:var(--gold)">مصممة لك أنت</span></h1>
+<p>تدريب أونلاين كامل يجمع بين برنامج تدريب مخصص، نظام غذائي عملي، متابعة أسبوعية، وتطبيق لتتبع التقدم. داخل ملف التدريب ستجد بجانب كل تمرين زر فيديو مباشر يفتح شرحاً مفصلاً لطريقة الأداء الصحيحة، حتى تعرف كيف تنفّذ كل حركة بثقة.</p>
+<div class="hero-actions">
+<a class="btn" href="#packages">اختر الباقة وابدأ الاشتراك</a>
+<a class="btn white" href="#store">تصفح المتجر</a>
+<a class="btn black" href="#calculator">جرب الحاسبة المجانية</a>
+</div>
+<div class="hero-badges">
+<span class="mini-badge">✓ تدريب مخصص</span><span class="mini-badge">✓ تغذية مخصصة</span>
+<span class="mini-badge">✓ متابعة وتعديل</span><span class="mini-badge">✓ دعم عبر واتساب</span>
+</div>
+</div>
+<div class="hero-replaceable-slot">
+<img alt="George Mousa online fitness systems showcase" src="assets/images/hero-systems.webp" fetchpriority="high" decoding="async"/>
+</div>
+</div>
+
+</section>
+
+
+<section class="section gm-calculator-section" id="calculator">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">FREE GM FITNESS TOOL</div>
+        <h2>حاسبة GM الذكية المجانية</h2>
+      </div>
+      <p>احسب السعرات التقريبية، BMR، BMI، واحتياجك اليومي من البروتين والكارب والدهون خلال أقل من دقيقة.</p>
+    </div>
+
+    <div class="gm-calc-layout">
+      <form class="gm-calc-form" id="gmCalculatorForm" novalidate>
+        <div class="gm-calc-heading">
+          <strong>أدخل بياناتك</strong>
+          <span>للأشخاص البالغين 18 سنة فما فوق</span>
+        </div>
+
+        <div class="gm-calc-fields">
+          <label class="gm-calc-field">
+            <span>الجنس</span>
+            <select id="calcGender" required>
+              <option value="">اختر الجنس</option>
+              <option value="male">ذكر</option>
+              <option value="female">أنثى</option>
+            </select>
+          </label>
+
+          <label class="gm-calc-field">
+            <span>العمر</span>
+            <div class="gm-input-unit">
+              <input id="calcAge" type="number" min="18" max="80" inputmode="numeric" placeholder="مثال: 24" required>
+              <em>سنة</em>
+            </div>
+          </label>
+
+          <label class="gm-calc-field">
+            <span>الطول</span>
+            <div class="gm-input-unit">
+              <input id="calcHeight" type="number" min="130" max="230" inputmode="decimal" placeholder="مثال: 175" required>
+              <em>سم</em>
+            </div>
+          </label>
+
+          <label class="gm-calc-field">
+            <span>الوزن</span>
+            <div class="gm-input-unit">
+              <input id="calcWeight" type="number" min="35" max="250" step="0.1" inputmode="decimal" placeholder="مثال: 75" required>
+              <em>كغ</em>
+            </div>
+          </label>
+
+          <label class="gm-calc-field gm-calc-wide">
+            <span>مستوى النشاط اليومي</span>
+            <select id="calcActivity" required>
+              <option value="">اختر مستوى النشاط</option>
+              <option value="1.2">قليل جداً — عمل مكتبي وقليل الحركة</option>
+              <option value="1.375">خفيف — تمرين 1–3 أيام أسبوعياً</option>
+              <option value="1.55">متوسط — تمرين 3–5 أيام أسبوعياً</option>
+              <option value="1.725">عالٍ — تمرين قوي 6–7 أيام أو نشاط رياضي مرتفع</option>
+            </select>
+          </label>
+
+          <label class="gm-calc-field gm-calc-wide">
+            <span>هدفك الحالي</span>
+            <select id="calcGoal" required>
+              <option value="">اختر الهدف</option>
+              <option value="lose">خسارة الدهون</option>
+              <option value="maintain">الثبات والحفاظ على الوزن</option>
+              <option value="gain">زيادة الوزن والكتلة العضلية</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="gm-calc-error" id="gmCalcError" role="alert"></div>
+
+        <button class="btn full gm-calc-submit" type="submit">
+          احسب احتياجاتي الآن
+        </button>
+
+        <p class="gm-calc-disclaimer">
+          النتائج تقديرية للاسترشاد وليست بديلاً عن تقييم طبي أو غذائي فردي، وBMI لا يفرّق بين الدهون والكتلة العضلية.
+        </p>
+      </form>
+
+      <div class="gm-calc-results" id="gmCalcResults" aria-live="polite">
+        <div class="gm-calc-empty" id="gmCalcEmpty">
+          <div class="gm-calc-empty-icon">GM</div>
+          <strong>نتيجتك ستظهر هنا</strong>
+          <span>أدخل بياناتك واضغط «احسب احتياجاتي الآن».</span>
+        </div>
+
+        <div class="gm-calc-output" id="gmCalcOutput" hidden>
+          <div class="gm-result-top">
+            <div>
+              <span>سعرات هدفك اليومية</span>
+              <strong id="resultTargetCalories">—</strong>
+              <small>سعرة / يوم</small>
+            </div>
+            <div class="gm-goal-chip" id="resultGoalLabel">—</div>
+          </div>
+
+          <div class="gm-result-grid">
+            <div class="gm-result-card">
+              <span>BMR</span>
+              <strong id="resultBmr">—</strong>
+              <small>الحرق الأساسي</small>
+            </div>
+            <div class="gm-result-card">
+              <span>سعرات الثبات</span>
+              <strong id="resultMaintenance">—</strong>
+              <small>TDEE تقريبي</small>
+            </div>
+            <div class="gm-result-card">
+              <span>BMI</span>
+              <strong id="resultBmi">—</strong>
+              <small id="resultBmiCategory">—</small>
+            </div>
+          </div>
+
+          <div class="gm-macros-title">الماكروز اليومية المقترحة</div>
+          <div class="gm-macros">
+            <div class="gm-macro">
+              <span>Protein</span>
+              <strong id="resultProtein">—</strong>
+              <small>بروتين</small>
+            </div>
+            <div class="gm-macro">
+              <span>Carbs</span>
+              <strong id="resultCarbs">—</strong>
+              <small>كارب</small>
+            </div>
+            <div class="gm-macro">
+              <span>Fat</span>
+              <strong id="resultFat">—</strong>
+              <small>دهون</small>
+            </div>
+          </div>
+
+          <div class="gm-result-note" id="gmResultNote"></div>
+
+          <a class="btn full gm-custom-plan-cta" href="#packages">
+            أحصل على خطة مخصصة لك أنت
+          </a>
+          <p class="gm-custom-plan-copy">
+            الحاسبة تعطيك نقطة بداية. الخطة المخصصة تضبط التدريب والتغذية والمتابعة حسب جسمك، هدفك، وروتينك الحقيقي.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="packages">
+<div class="container">
+<div class="section-head">
+<div><div class="eyebrow">COACHING PACKAGES</div><h2>اختر باقتك وابدأ خلال دقائق</h2></div>
+<p>اختر الباقة المناسبة واملأ الاستمارة. جميع باقات التدريب تشمل ملف تدريب مخصص، وفيه زر فيديو شرح مفصل بجانب كل تمرين حتى تعرف طريقة الأداء الصحيحة خطوة بخطوة.</p>
+</div>
+
+<div class="package-video-banner">
+  <div class="package-video-play">▶</div>
+  <div>
+    <strong>ميزة أساسية في جميع الباقات</strong>
+    <span>كل تمرين داخل ملف التدريب يحتوي على زر فيديو مباشر لشرح الأداء الصحيح بشكل مفصل.</span>
+  </div>
+</div>
+
+<div class="grid grid-3">
+<div class="card price-card">
+<div class="eyebrow">الباقة الشهرية</div>
+<div class="price">49$</div>
+<p>لبداية واضحة وتجربة النظام لمدة قصيرة.</p>
+<div class="check-list">
+<div class="check"><b>✓</b><span>تدريب + تغذية مخصصة</span></div>
+<div class="check video-check"><b>▶</b><span><strong>زر فيديو شرح مفصل بجانب كل تمرين</strong></span></div>
+<div class="check"><b>✓</b><span>تطبيق تتبع التقدم</span></div>
+<div class="check"><b>✓</b><span>متابعة أسبوعية</span></div>
+<div class="check"><b>✓</b><span>دعم عبر واتساب</span></div>
+</div>
+<button class="btn full" onclick="choosePackage('الباقة الشهرية','49$')" style="margin-top:18px">اختر الباقة الشهرية</button>
+</div>
+<div class="card price-card recommended">
+<div class="ribbon">الأفضل للنتائج</div>
+<div class="eyebrow">باقة 3 أشهر</div>
+<div class="price">120$</div>
+<p>وقت كافٍ لبناء الالتزام، قياس النتائج، والتعديل الحقيقي.</p>
+<div class="check-list">
+<div class="check"><b>✓</b><span>كل ميزات الباقة الشهرية</span></div>
+<div class="check video-check"><b>▶</b><span><strong>فيديو شرح مباشر ومفصل لكل تمرين داخل الملف</strong></span></div>
+<div class="check"><b>✓</b><span>خطة 90 يوم</span></div>
+<div class="check"><b>✓</b><span>متابعة أعمق للتقدم</span></div>
+<div class="check"><b>✓</b><span>تعديلات مستمرة حسب النتائج</span></div>
+<div class="check"><b>✓</b><span>تقييم صور ومقاسات الجسم</span></div>
+</div>
+<button class="btn full" onclick="choosePackage('باقة 3 أشهر','120$')" style="margin-top:18px">ابدأ باقة 3 أشهر</button>
+</div>
+<div class="card price-card">
+<div class="eyebrow">باقة 6 أشهر</div>
+<div class="price">449$</div>
+<p>متابعة طويلة للتحول الجاد وبناء نتيجة قابلة للاستمرار.</p>
+<div class="check-list">
+<div class="check"><b>✓</b><span>كل ميزات باقة 3 أشهر</span></div>
+<div class="check video-check"><b>▶</b><span><strong>مكتبة شرح فيديو مرافقة لكل مراحل البرنامج</strong></span></div>
+<div class="check"><b>✓</b><span>خطة طويلة مقسمة على مراحل</span></div>
+<div class="check"><b>✓</b><span>مراجعة شاملة لكل مرحلة</span></div>
+<div class="check"><b>✓</b><span>استراتيجية تثبيت النتيجة</span></div>
+<div class="check"><b>✓</b><span>متابعة مستمرة طويلة المدى</span></div>
+</div>
+<button class="btn full" onclick="choosePackage('باقة 6 أشهر','449$')" style="margin-top:18px">ابدأ باقة 6 أشهر</button>
+</div>
+</div>
+<div class="payment-note">
+<strong>طرق الدفع:</strong> متوفر كافة وسائل الدفع الدولية والسورية. بعد اختيار الباقة وإرسال الاستمارة، يتم تزويدك بطريقة الدفع الأنسب لك.
+    </div>
+</div>
+</section>
+
+<section class="section alt" id="store">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">GM STORE</div>
+        <h2>البرامج والكتيبات</h2>
+      </div>
+      <p>متجر للملفات المجانية والمدفوعة: برامج رجال، برامج سيدات، وملفات رقمية منظمة.</p>
+    </div>
+
+    <div class="grid grid-2 store-intro-grid" style="margin-bottom:20px">
+      <div class="card store-banner-card">
+        <img alt="غلاف المتجر الرقمي" src="assets/images/store-cover.webp">
+      </div>
+
+      <div class="card">
+        <h3>اختر البرنامج المناسب لك</h3>
+        <p>البرامج المجانية يمكنك تحميلها مباشرة، أما البرامج المدفوعة فيتم طلبها عبر واتساب لإتمام الدفع واستلام الملف.</p>
+        <div class="check-list">
+          <div class="check"><b>✓</b><span>تحميل مباشر للبرامج المجانية</span></div>
+          <div class="check"><b>✓</b><span>استلام سريع للبرامج المدفوعة بعد تأكيد الدفع</span></div>
+          <div class="check"><b>✓</b><span>متوفر وسائل دفع دولية وسورية</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="store-programs-grid">
+      <article class="card product-card">
+    <div class="product-cover">
+      <img src="assets/images/pro-split-5-days.webp" alt="Pro Split 5 Days">
+    </div>
+    <div class="product-body">
+      <span class="tag">رجال</span>
+      <h3>Pro Split — 5 Days</h3>
+      <p>برنامج رجال — مستوى متقدم</p>
+      <div class="product-price">12$</div>
+      <button class="btn full" onclick="productAction(1)">اطلب عبر واتساب</button>
+    </div>
+  </article>
+      <article class="card product-card">
+    <div class="product-cover">
+      <img src="assets/images/pro-split-4-days.webp" alt="Pro Split 4 Days">
+    </div>
+    <div class="product-body">
+      <span class="tag">رجال</span>
+      <h3>Pro Split — 4 Days</h3>
+      <p>برنامج رجال — مستوى متوسط</p>
+      <div class="product-price">9$</div>
+      <button class="btn full" onclick="productAction(2)">اطلب عبر واتساب</button>
+    </div>
+  </article>
+      <article class="card product-card">
+    <div class="product-cover">
+      <img src="assets/images/arnold-split-3-days.webp" alt="Arnold Split 3 Days">
+    </div>
+    <div class="product-body">
+      <span class="tag">رجال</span>
+      <h3>Arnold Split — 3 Days</h3>
+      <p>برنامج رجال — مستوى مبتدئ</p>
+      <div class="product-price">مجاني</div>
+      <button class="btn full" onclick="productAction(3)">تحميل البرنامج مجاناً</button>
+    </div>
+  </article>
+      <article class="card product-card">
+    <div class="product-cover">
+      <img src="assets/images/women-foundation-8-weeks.webp" alt="برنامج التأسيس للسيدات">
+    </div>
+    <div class="product-body">
+      <span class="tag">سيدات</span>
+      <h3>برنامج التأسيس للسيدات</h3>
+      <p>شد الجسم وتقوية العضلات — 8 أسابيع</p>
+      <div class="product-price">مجاني</div>
+      <button class="btn full" onclick="productAction(4)">تحميل البرنامج مجاناً</button>
+    </div>
+  </article>
+    </div>
+  </div>
+</section>
+<section class="section" id="about">
+<div class="container coach-grid">
+<div class="photo-stack">
+<div class="photo-slot">
+<img alt="صورة جورج موسى" src="assets/images/coach-george.webp"/>
+</div>
+<div class="photo-slot">
+<img alt="صورة تطور جسم جورج موسى" src="assets/images/coach-transformation.webp"/>
+</div>
+<div class="photo-slot certificate-slot">
+<img alt="شهادة Personal Trainer &amp; Sport Nutrition" src="assets/images/certificate.webp"/>
+<div class="image-label">الشهادة</div>
+</div>
+</div>
+<div>
+<div class="eyebrow">ABOUT THE COACH</div>
+<h2>أنا جورج موسى</h2>
+<p style="color:#d0d0d0">مدرب شخصي وخبير تغذية رياضية، أساعد الأشخاص على بناء جسم أفضل من خلال خطط تدريب وتغذية مخصصة، واقعية وقابلة للتطبيق.</p>
+<p style="color:var(--muted)">أؤمن أن أفضل خطة ليست الخطة الأقسى، بل الخطة التي تستطيع الالتزام بها وتطويرها مع الوقت. الهدف ليس فقط الوصول إلى نتيجة، بل أن تفهم جسمك وتعرف كيف تحافظ على تطورك.</p>
+<div class="metric-strip">
+<div class="metric"><strong>100%</strong><span>خطة مخصصة</span></div>
+<div class="metric"><strong>Weekly</strong><span>متابعة منظمة</span></div>
+<div class="metric"><strong>Data</strong><span>تعديل حسب القياس</span></div>
+<div class="metric"><strong>WhatsApp</strong><span>دعم مباشر</span></div>
+</div>
+</div>
+</div>
+</section>
+<section class="section alt" id="faq">
+<div class="container">
+<div class="section-head"><div><div class="eyebrow">FAQ</div><h2>أسئلة شائعة</h2></div></div>
+<div class="faq"><button onclick="toggleFaq(this)">هل التدريب الأونلاين مناسب للمبتدئين؟ <span>+</span></button><div class="faq-content">نعم. الخطة تُبنى حسب مستواك وقدرتك على الالتزام، سواء كنت مبتدئاً أو لديك خبرة.</div></div>
+<div class="faq"><button onclick="toggleFaq(this)">هل أحتاج نادي؟ <span>+</span></button><div class="faq-content">يعتمد على هدفك وإمكانياتك. يمكن بناء خطة للنادي أو المنزل حسب الحالة.</div></div>
+<div class="faq"><button onclick="toggleFaq(this)">هل النظام الغذائي صعب؟ <span>+</span></button><div class="faq-content">الهدف أن يكون عملياً ومناسباً لأكلاتك وبلدك وروتينك، لا أن يكون مثالياً وغير قابل للاستمرار.</div></div>
+<div class="faq"><button onclick="toggleFaq(this)">متى تظهر النتائج؟ <span>+</span></button><div class="faq-content">تختلف حسب الهدف والالتزام ونقطة البداية، لكن التغيير يحتاج وقتاً واستمرارية، ولهذا المتابعة والقياس جزء أساسي من النظام.</div></div>
+<div class="faq"><button onclick="toggleFaq(this)">كيف أدفع؟ <span>+</span></button><div class="faq-content">متوفر كافة وسائل الدفع الدولية والسورية. بعد اختيار الباقة وإرسال الاستمارة يتم إرسال خيار الدفع المناسب لك عبر واتساب.</div></div>
+</div>
+</section>
+<section class="section" id="results">
+<div class="container">
+<div class="section-head">
+<div><div class="eyebrow">CLIENT RESULTS</div><h2>نتائج وتطورات العملاء</h2></div>
+<p>هنا ستظهر صور قبل / بعد وتطورات المشتركين مع التدريب والمتابعة.</p>
+</div>
+<div class="results-grid-fixed">
+<div class="result-card-fixed">
+<div class="result-image-fixed"><span>صورة نتيجة العميل 1</span></div>
+<div class="result-labels-fixed"><span class="before">قبل</span><span class="after">بعد</span></div>
+</div>
+<div class="result-card-fixed">
+<div class="result-image-fixed"><span>صورة نتيجة العميل 2</span></div>
+<div class="result-labels-fixed"><span class="before">قبل</span><span class="after">بعد</span></div>
+</div>
+<div class="result-card-fixed">
+<div class="result-image-fixed"><span>صورة نتيجة العميل 3</span></div>
+<div class="result-labels-fixed"><span class="before">قبل</span><span class="after">بعد</span></div>
+</div>
+<div class="result-card-fixed">
+<div class="result-image-fixed"><span>صورة نتيجة العميل 4</span></div>
+<div class="result-labels-fixed"><span class="before">قبل</span><span class="after">بعد</span></div>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container cta">
+<div class="eyebrow">START NOW</div>
+<h2>جاهز تبدأ بخطة واضحة؟</h2>
+<p style="color:#d0d0d0">اختر الباقة المناسبة، عبّئ الاستمارة مرة واحدة، وستصلني بياناتك كاملة حتى أتعرف على روتينك وهدفك قبل تجهيز خطتك.</p>
+<a class="btn" href="#packages">اختر باقتك وابدأ</a>
+</div>
+</section>
+</main>
+<footer>
+<div class="container footer-grid">
+<div><img alt="George Mousa" class="footer-logo" src="assets/images/logo.png"/><div style="margin-top:8px">GEORGE MOUSA — ONLINE FITNESS TRAINING</div></div>
+<div>Instagram: @george.mousa1<br/>WhatsApp: +963 987 461 750</div>
+</div>
+</footer>
+<div class="sticky-mobile">
+<a class="btn" href="#packages">اشترك الآن</a>
+<a class="btn whatsapp" href="https://wa.me/963987461750?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%83%D9%88%D8%AA%D8%B4%20%D8%AC%D9%88%D8%B1%D8%AC%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%AA%D8%AF%D8%B1%D9%8A%D8%A8%20%D8%A7%D9%84%D8%A3%D9%88%D9%86%D9%84%D8%A7%D9%8A%D9%86." target="_blank">واتساب</a>
+</div>
+<!-- Comprehensive intake form -->
+<div id="intakeWrap">
+<div class="form-shell">
+<div class="form-head">
+<div class="form-title-row">
+<div>
+<div class="eyebrow">ONLINE COACHING INTAKE</div>
+<strong id="selectedPackageTitle" style="font-size:16px">استمارة الاشتراك</strong>
+</div>
+<button class="close-btn" onclick="closeForm()">إغلاق ×</button>
+</div>
+<div class="progress"><span id="formProgress"></span></div>
+<div class="admin-note" id="stepLabel">الخطوة 1 من 8</div>
+</div>
+<form class="form-body" id="intakeForm" onsubmit="return false;">
+<input name="selected_package" type="hidden"/>
+<input name="selected_price" type="hidden"/>
+<section class="form-step active" data-step="1">
+<h3>1. البيانات الأساسية</h3>
+<div class="grid grid-2">
+<div class="field"><label>الاسم الكامل *</label><input name="name" required=""/></div>
+<div class="field"><label>العمر *</label><input min="14" name="age" required="" type="number"/></div>
+<div class="field"><label>الطول (سم) *</label><input name="height" required="" type="number"/></div>
+<div class="field"><label>الوزن (كغ) *</label><input name="weight" required="" step=".1" type="number"/></div>
+</div>
+<div class="field"><label>الجنس *</label><div class="options">
+<label class="option"><input name="gender" required="" type="radio" value="ذكر"/> ذكر</label>
+<label class="option"><input name="gender" type="radio" value="أنثى"/> أنثى</label>
+</div></div>
+<div class="grid grid-2">
+<div class="field"><label>المدينة / الدولة *</label><input name="location" required=""/></div>
+<div class="field"><label>رقم واتساب *</label><input name="client_whatsapp" required="" type="tel"/></div>
+</div>
+</section>
+<section class="form-step" data-step="2">
+<h3>2. هدفك</h3>
+<div class="field"><label>الهدف الرئيسي *</label>
+<select name="goal" required="">
+<option value="">اختر...</option><option>خسارة دهون</option><option>زيادة كتلة عضلية</option>
+<option>إعادة تشكيل الجسم</option><option>تحسين اللياقة</option><option>زيادة القوة</option><option>أداء رياضي</option>
+</select>
+</div>
+<div class="field"><label>اشرح هدفك بكلماتك</label><textarea name="goal_desc" rows="3"></textarea></div>
+<div class="grid grid-2">
+<div class="field"><label>الوزن المستهدف إن وجد</label><input name="target_weight"/></div>
+<div class="field"><label>هل لديك موعد أو مناسبة؟</label><input name="deadline" placeholder="مثال: بعد 3 أشهر"/></div>
+</div>
+<div class="field"><label>أكبر مشكلة تواجهك حالياً</label><textarea name="main_problem" rows="2"></textarea></div>
+</section>
+<section class="form-step" data-step="3">
+<h3>3. التدريب</h3>
+<div class="field"><label>مستوى الخبرة *</label><div class="options">
+<label class="option"><input name="experience" required="" type="radio" value="مبتدئ"/> مبتدئ</label>
+<label class="option"><input name="experience" type="radio" value="متوسط"/> متوسط</label>
+<label class="option"><input name="experience" type="radio" value="متقدم"/> متقدم</label>
+</div></div>
+<div class="grid grid-2">
+<div class="field"><label>كم يوم تستطيع الالتزام أسبوعياً؟ *</label><select name="available_days" required=""><option value="">اختر...</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+<div class="field"><label>مدة التمرين المناسبة</label><select name="duration"><option>45 دقيقة</option><option>60 دقيقة</option><option>75 دقيقة</option><option>أكثر من 75 دقيقة</option></select></div>
+</div>
+<div class="field"><label>حدد أيام التمرين</label><div class="days" id="trainingDays"></div></div>
+<div class="field"><label>حدد أيام الراحة</label><div class="days" id="restDays"></div></div>
+<div class="grid grid-2">
+<div class="field"><label>وقت التمرين المعتاد *</label><input name="workout_time" required="" type="time"/></div>
+<div class="field"><label>مكان التدريب *</label><select name="training_place" required=""><option value="">اختر...</option><option>نادي</option><option>منزل</option><option>نادي + منزل</option></select></div>
+</div>
+<div class="field"><label>هل تعرف أداء التمارين بشكل صحيح؟</label><select name="form_knowledge"><option>نعم</option><option>إلى حد ما</option><option>لا</option></select></div>
+</section>
+<section class="form-step" data-step="4">
+<h3>4. الصحة والإصابات</h3>
+<div class="field"><label>هل لديك إصابات حالية أو سابقة؟</label><div class="options">
+<label class="option"><input name="injuries" type="radio" value="نعم"/> نعم</label>
+<label class="option"><input name="injuries" type="radio" value="لا"/> لا</label>
+</div></div>
+<div class="field"><label>تفاصيل الإصابات أو الألم</label><textarea name="injury_details" rows="3"></textarea></div>
+<div class="field"><label>هل لديك حالات صحية أو أمراض مزمنة؟</label><textarea name="health_conditions" placeholder="سكري، ضغط، قلب، تنفس، هضم، هرمونات..." rows="2"></textarea></div>
+<div class="grid grid-2">
+<div class="field"><label>أدوية تستخدمها حالياً</label><input name="medications"/></div>
+<div class="field"><label>حساسية غذائية</label><input name="allergies"/></div>
+</div>
+<div class="notice">إذا كان لديك مرض مزمن، إصابة مهمة، أو علاج طبي مستمر، لا تعتبر الخطة بديلاً عن تقييم الطبيب المختص.</div>
+</section>
+<section class="form-step" data-step="5">
+<h3>5. التغذية الحالية</h3>
+<div class="grid grid-2">
+<div class="field"><label>كم وجبة تأكل بالعادة؟</label><input min="1" name="meals_count" type="number"/></div>
+<div class="field"><label>كمية الماء اليومية تقريباً</label><input name="water" placeholder="مثال: 2 لتر"/></div>
+</div>
+<div class="field"><label>اكتب مثالاً عن أكلك المعتاد خلال يوم كامل</label><textarea name="usual_food" rows="4"></textarea></div>
+<div class="grid grid-2">
+<div class="field"><label>هل تحسب السعرات؟</label><select name="count_calories"><option>لا</option><option>نعم</option><option>أحياناً</option></select></div>
+<div class="field"><label>هل تستطيع استخدام ميزان طعام؟</label><select name="food_scale"><option>نعم</option><option>أحياناً</option><option>لا</option></select></div>
+</div>
+<div class="field"><label>أطعمة تحبها</label><input name="liked_foods"/></div>
+<div class="field"><label>أطعمة لا تحبها أو لا تستطيع تناولها</label><input name="disliked_foods"/></div>
+<div class="field"><label>مستوى الشهية</label><select name="appetite"><option>طبيعية</option><option>منخفضة</option><option>عالية</option></select></div>
+</section>
+<section class="form-step" data-step="6">
+<h3>6. العمل والنوم ونمط الحياة</h3>
+<div class="grid grid-2">
+<div class="field"><label>العمل / الدراسة</label><input name="occupation"/></div>
+<div class="field"><label>طبيعة يومك</label><select name="work_nature"><option>مكتبي / حركة قليلة</option><option>حركة خفيفة</option><option>مجهود متوسط</option><option>مجهود عالي</option></select></div>
+</div>
+<div class="field"><label>ساعات العمل أو الدراسة</label><input name="work_hours" placeholder="مثال: 8 صباحاً إلى 4 عصراً"/></div>
+<div class="grid grid-2">
+<div class="field"><label>وقت النهوض المعتاد *</label><input name="wake_time" required="" type="time"/></div>
+<div class="field"><label>وقت النوم المعتاد *</label><input name="sleep_time" required="" type="time"/></div>
+</div>
+<div class="grid grid-2">
+<div class="field"><label>جودة النوم</label><select name="sleep_quality"><option>جيدة</option><option>متوسطة</option><option>سيئة</option></select></div>
+<div class="field"><label>مستوى التوتر</label><select name="stress"><option>منخفض</option><option>متوسط</option><option>عالي</option></select></div>
+</div>
+<div class="field"><label>هل يتغير روتينك كثيراً أو تسافر؟</label><textarea name="routine_changes" rows="2"></textarea></div>
+</section>
+<section class="form-step" data-step="7">
+<h3>7. المكملات والمتابعة</h3>
+<div class="field"><label>هل تستخدم مكملات حالياً؟ وما هي؟</label><textarea name="supplements" rows="2"></textarea></div>
+<div class="field"><label>هل تستطيع إرسال صور تقدم بشكل دوري؟</label><select name="progress_photos"><option>نعم</option><option>لا</option><option>أحتاج شرح الطريقة</option></select></div>
+<div class="field"><label>هل سبق واشتركت مع مدرب؟ وما سبب التوقف إن وجد؟</label><textarea name="previous_coach" rows="3"></textarea></div>
+<div class="grid grid-2">
+<div class="field"><label>متى تريد البدء؟ *</label><select name="start_time" required=""><option value="">اختر...</option><option>فوراً</option><option>خلال أسبوع</option><option>بداية الشهر القادم</option></select></div>
+<div class="field"><label>مدى جاهزيتك للالتزام *</label><select name="ready" required=""><option value="">اختر...</option><option>جاهز للبدء</option><option>أحتاج استشارة أولاً</option></select></div>
+</div>
+<div class="field"><label>أي شيء آخر تريد أن أعرفه؟</label><textarea name="extra_notes" rows="3"></textarea></div>
+</section>
+<section class="form-step" data-step="8">
+<h3>8. مراجعة وإرسال</h3>
+<div class="notice" style="margin-bottom:12px">راجع الملخص، ثم اضغط إرسال. سيتم فتح واتساب ورسالة جاهزة تحتوي اسم الباقة وكل بياناتك.</div>
+<div class="form-summary" id="formSummary"></div>
+<div class="field" style="margin-top:14px">
+<label class="option"><input name="confirm_info" required="" type="checkbox"/> أؤكد أن المعلومات المدخلة صحيحة حسب علمي.</label>
+<div class="error" id="confirmError">يجب تأكيد صحة البيانات.</div>
+</div>
+<button class="btn whatsapp full" onclick="submitToWhatsapp()">إرسال الاستمارة على واتساب</button>
+</section>
+<div class="error" id="stepError">يرجى تعبئة الحقول المطلوبة في هذه الخطوة.</div>
+<div class="form-nav">
+<button class="btn black" id="prevBtn" onclick="prevStep()" type="button">السابق</button>
+<button class="btn" id="nextBtn" onclick="nextStep()" type="button">التالي</button>
+</div>
+</form>
+</div>
+</div>
+
+
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>
