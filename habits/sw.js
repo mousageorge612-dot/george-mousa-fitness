@@ -1,4 +1,4 @@
-const CACHE = 'gm-habits-v2';
+const CACHE = 'gm-habits-v3';
 const FILES = [
   './', './index.html', './manifest.webmanifest',
   './assets/styles.css', './assets/app.js',

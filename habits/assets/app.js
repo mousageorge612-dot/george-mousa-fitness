@@ -330,7 +330,7 @@
       bindChips(b, function () { cat = chipVal(b, 'cat'); draw(b); }); draw(b);
     });
   }
-  var DAYMAP = { 6: 'س', 0: 'ح', 1: 'ن', 2: 'ث', 3: 'ر', 4: 'خ', 5: 'ج' };
+  var DAYMAP = { 6: 'السبت', 0: 'الأحد', 1: 'الاثنين', 2: 'الثلاثاء', 3: 'الأربعاء', 4: 'الخميس', 5: 'الجمعة' };
   function habitForm(p) {
     p = p || {};
     var days = p.days || [0, 1, 2, 3, 4, 5, 6];
@@ -662,7 +662,7 @@
         '<button class="btn ghost" type="button" data-act="coach">تواصل مع الكوتش جورج</button>' +
         '<button class="btn ghost" type="button" data-act="site">موقع George Mousa</button>' +
         '<button class="btn danger" type="button" data-act="reset">مسح كل البيانات</button>' +
-        '<p class="muted" style="margin:0;font-size:12px;text-align:center">بياناتك محفوظة على جهازك فقط، وما في حساب ولا سيرفر.<br>GM Habits v1.1 · مجاني من George Mousa Online Coaching</p></form>', function (b) {
+        '<p class="muted" style="margin:0;font-size:12px;text-align:center">بياناتك محفوظة على جهازك فقط، وما في حساب ولا سيرفر.<br>GM Habits v1.2 · مجاني من George Mousa Online Coaching</p></form>', function (b) {
         var f = $('#sf', b); bindChips(f);
         f.addEventListener('submit', function (e) {
           e.preventDefault(); p.name = f.name.value.trim(); p.identity = chipVals(f, 'identity'); p.trains = chipVal(f, 'trains') === '1';
