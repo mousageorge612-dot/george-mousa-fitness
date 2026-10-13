@@ -1,0 +1,99 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0b0b0b;font-family:Cairo,sans-serif}
+.page{width:512px;height:800px;background:#0b0b0b;color:#fff;position:relative;overflow:hidden;display:flex;flex-direction:column}
+.y{color:#FFB800}
+.head{padding:16px 22px 10px;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:3px solid #FFB800}
+.day{font-family:'Bebas Neue';font-size:20px;letter-spacing:2px;color:#FFB800;line-height:1}
+.title{font-weight:900;font-size:26px;line-height:1.2}
+.logo{height:25px;width:auto;display:block;margin-bottom:6px}
+.body{flex:1;padding:0 22px 8px;display:flex;flex-direction:column;gap:9px;margin-top:12px}
+.sec{font-weight:900;font-size:15px;color:#FFB800;line-height:1.5;margin-top:2px}
+.box{background:#161616;border:1px solid #262626;border-radius:12px;padding:8px 13px}
+.lbl{font-size:12px;color:#aaa;line-height:1.4}
+.val{font-size:19px;font-weight:900;line-height:1.4}
+.row{display:flex;gap:8px}
+.row>.box{flex:1}
+.macro{flex:1;background:#FFB800;color:#000;border-radius:12px;text-align:center;padding:7px 4px}
+.macro .v{font-size:22px;font-weight:900;line-height:1.2}
+.macro .l{font-size:12px;font-weight:700;line-height:1.4}
+.big{text-align:center}
+.big .val{font-size:36px;color:#FFB800}
+.warm{margin:9px 22px 0;background:#1a1a1a;border-left:4px solid #FFB800;padding:5px 12px;font-size:12px;font-weight:600;color:#ddd}
+.warm b{color:#FFB800}
+.card{margin:6px 22px 0;background:#161616;border-radius:12px;display:flex;align-items:stretch;overflow:hidden;border:1px solid #262626}
+.num{width:30px;background:#FFB800;color:#000;font-family:'Bebas Neue';font-size:26px;display:flex;align-items:center;justify-content:center}
+.info{flex:1;padding:5px 10px;display:flex;flex-direction:column;justify-content:space-between}
+.name{font-weight:800;font-size:14px;line-height:1.35}
+.mus{font-size:10px;color:#999;line-height:1.3}
+.chips{display:flex;gap:5px}
+.chip{background:#0b0b0b;border:1px solid #333;border-radius:8px;padding:2px 3px;text-align:center;width:62px}
+.chip .v{font-weight:900;font-size:13px;line-height:1.25}
+.chip .l{font-size:9px;color:#aaa;line-height:1.2}
+.media{display:flex;flex-direction:row;gap:6px;padding:6px}
+.ph{width:120px;border-radius:8px;background:#1f1f1f;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.ph img{width:120px;height:100%;object-fit:contain;display:block}
+.yt{width:46px;background:#FFB800;color:#000;border-radius:8px;font-size:11px;font-weight:900;text-align:center;display:flex;align-items:center;justify-content:center;line-height:1.4}
+.note{background:#1a1a1a;border-radius:10px;padding:8px 12px;font-size:13.5px;font-weight:600;color:#ddd;line-height:1.55}
+.note b{color:#FFB800}
+.rule{display:flex;gap:10px;align-items:center;background:#161616;border:1px solid #262626;border-radius:12px;padding:10px 12px;font-size:14.5px;font-weight:700;line-height:1.45}
+.rule .n{min-width:26px;height:26px;border-radius:13px;background:#FFB800;color:#000;font-family:'Bebas Neue';font-size:20px;display:flex;align-items:center;justify-content:center}
+.dc{display:flex;align-items:center;gap:10px;background:#161616;border:1px solid #262626;border-radius:12px;padding:8px 12px}
+.dc .d{width:92px;font-family:'Bebas Neue';font-size:22px;letter-spacing:1px;color:#FFB800;line-height:1}
+.dc .w{flex:1;font-size:14px;font-weight:800;line-height:1.35}
+.dc .s{font-size:11px;color:#aaa;font-weight:600}
+.dc.rest{opacity:.5}
+.dc.rest .d{color:#aaa}
+.opt{background:#161616;border:1px solid #262626;border-radius:12px;padding:10px 14px}
+.opt .t{display:flex;justify-content:space-between;align-items:center;font-weight:900;font-size:16.5px;color:#FFB800;line-height:1.5}
+.opt .k{background:#FFB800;color:#000;border-radius:8px;padding:0 8px;font-size:12px;font-weight:900}
+.opt ul{list-style:none}
+.opt li{font-size:14.5px;font-weight:600;line-height:1.6;color:#eee}
+.opt li:before{content:"• ";color:#FFB800;font-weight:900}
+.hp{display:flex;gap:10px;align-items:center;background:#161616;border:1px solid #262626;border-radius:12px;padding:7px 12px}
+.hp .i{font-size:26px;width:36px;text-align:center}
+.hp .t{font-size:14px;font-weight:900;color:#FFB800;line-height:1.3}
+.hp .s{font-size:12px;color:#ddd;font-weight:600;line-height:1.4}
+.tl{display:flex;gap:10px;align-items:center;background:#161616;border:1px solid #262626;border-radius:12px;padding:8px 12px}
+.tl .h{width:62px;font-family:'Bebas Neue';font-size:24px;color:#FFB800;line-height:1}
+.tl .m{flex:1;font-size:14px;font-weight:800;line-height:1.3}
+.tl .c{font-size:12px;color:#aaa;font-weight:700}
+.foot{margin-top:auto;padding:9px 22px;display:flex;justify-content:space-between;font-size:11px;color:#aaa;border-top:1px solid #222}</style></head><body>
+<div class="page" data-document-role="page" data-label="Profile">
+<div class="head"><div><div class="day">NUTRITION PLAN</div><div class="title">Your <span class=y>targets</span></div></div><img class="logo" src="https://cdn.jsdelivr.net/gh/mousageorge612-dot/george-mousa-fitness@3e7fe8d6d95b6cc9469128acb735265666508f20/canva/gm-logo.png" alt="George Mousa"></div>
+<div class="body"><div class="box"><div class="lbl">Name</div><div class="val">Andreea</div></div>
+<div class="row"><div class="box"><div class="lbl">Goal</div><div class="val">Fat loss</div></div><div class="box"><div class="lbl">Age</div><div class="val">24</div></div></div>
+<div class="row"><div class="box"><div class="lbl">Height</div><div class="val">172 cm</div></div><div class="box"><div class="lbl">Start weight</div><div class="val">95 kg</div></div><div class="box"><div class="lbl">Target</div><div class="val">70 kg</div></div></div>
+<div class="row"><div class="box"><div class="lbl">Level</div><div class="val">Beginner</div></div><div class="box"><div class="lbl">Training</div><div class="val">4 days · 19:30</div></div></div>
+<div class="sec">Your daily needs</div>
+<div class="box big"><div class="lbl">Daily calories</div><div class="val">1800 kcal</div></div>
+<div class="row"><div class="macro"><div class="v">140 g</div><div class="l">Protein</div></div><div class="macro"><div class="v">175 g</div><div class="l">Carbs</div></div><div class="macro"><div class="v">60 g</div><div class="l">Fat</div></div></div>
+<div class="note"><b>Water:</b> 2.5-3 L per day &nbsp;·&nbsp; <b>Expected:</b> −0.5 to −0.9 kg per week &nbsp;·&nbsp; <b>Month 1 goal:</b> −3 to −4 kg</div></div><div class="foot"><span>@george.mousa1</span><span>+963 987 461 750</span></div></div><div class="page" data-document-role="page" data-label="Portions &amp; timing">
+<div class="head"><div><div class="day">NO SCALE NEEDED</div><div class="title">Hand <span class=y>portions</span></div></div><img class="logo" src="https://cdn.jsdelivr.net/gh/mousageorge612-dot/george-mousa-fitness@3e7fe8d6d95b6cc9469128acb735265666508f20/canva/gm-logo.png" alt="George Mousa"></div>
+<div class="body">
+<div class="hp"><div class="i">🖐️</div><div><div class="t">Palm = protein</div><div class="s">about 120-150 g raw meat or fish</div></div></div>
+<div class="hp"><div class="i">✊</div><div><div class="t">Fist = carbs</div><div class="s">about 150 g cooked rice, potatoes or mămăligă</div></div></div>
+<div class="hp"><div class="i">👐</div><div><div class="t">Two hands = vegetables</div><div class="s">eat as much as you like</div></div></div>
+<div class="hp"><div class="i">👍</div><div><div class="t">Thumb = fat</div><div class="s">1 tsp oil, 10 g nuts or 15 g cheese</div></div></div>
+<div class="sec">Your day</div>
+<div class="tl"><div class="h">08:00</div><div class="m">Breakfast</div><div class="c">~400 kcal</div></div>
+<div class="tl"><div class="h">13:30</div><div class="m">Lunch</div><div class="c">~550 kcal</div></div>
+<div class="tl"><div class="h">17:30</div><div class="m">Pre-workout snack</div><div class="c">~300 kcal</div></div>
+<div class="tl"><div class="h">20:45</div><div class="m">Dinner (after training)</div><div class="c">~450 kcal</div></div>
+<div class="tl"><div class="h">ANY</div><div class="m">Sweet treat 🍫</div><div class="c">~120 kcal</div></div></div><div class="foot"><span>@george.mousa1</span><span>+963 987 461 750</span></div></div><div class="page" data-document-role="page" data-label="Breakfast">
+<div class="head"><div><div class="day">MEAL 01 · 08:00</div><div class="title">Break<span class=y>fast</span></div></div><img class="logo" src="https://cdn.jsdelivr.net/gh/mousageorge612-dot/george-mousa-fitness@3e7fe8d6d95b6cc9469128acb735265666508f20/canva/gm-logo.png" alt="George Mousa"></div>
+<div class="body"><div class="opt"><div class="t"><span>Option A</span><span class=k>~400 kcal</span></div><ul><li>2 eggs + 100 g egg whites (omelette, little oil)</li><li>1 slice rye bread</li><li>Tomato and cucumber</li><li>1 apple</li></ul></div><div class="opt"><div class="t"><span>Option B</span><span class=k>~400 kcal</span></div><ul><li>200 g Greek yogurt 2%</li><li>40 g oats</li><li>100 g berries</li><li>1 tsp honey</li></ul></div><div class="opt"><div class="t"><span>Option C</span><span class=k>~350 kcal</span></div><ul><li>200 g brânză de vaci (light cottage cheese)</li><li>1 slice rye bread</li><li>Tomatoes, cucumber, peppers</li><li>1 tsp olive oil</li></ul></div><div class="note"><b>Tip:</b> start the day with 1 big glass of water before breakfast.</div></div><div class="foot"><span>@george.mousa1</span><span>+963 987 461 750</span></div></div><div class="page" data-document-role="page" data-label="Lunch">
+<div class="head"><div><div class="day">MEAL 02 · 13:30</div><div class="title">Lunch · <span class=y>plate method</span></div></div><img class="logo" src="https://cdn.jsdelivr.net/gh/mousageorge612-dot/george-mousa-fitness@3e7fe8d6d95b6cc9469128acb735265666508f20/canva/gm-logo.png" alt="George Mousa"></div>
+<div class="body"><div class="opt"><div class="t"><span>Protein · 1 palm (150 g raw)</span></div><ul><li>Chicken breast or turkey</li><li>Lean pork (pulpă) or 5% beef</li><li>White fish</li></ul></div><div class="opt"><div class="t"><span>Carbs · 1 fist</span></div><ul><li>150 g cooked rice, or</li><li>200 g potatoes, or</li><li>200 g mămăligă, or 2 slices rye bread</li></ul></div><div class="opt"><div class="t"><span>Vegetables · 2 hands</span></div><ul><li>Salad, grilled or cooked vegetables</li></ul></div><div class="opt"><div class="t"><span>Fat · 1 thumb</span></div><ul><li>1 tsp olive oil</li></ul></div><div class="note"><b>Ciorbă</b> is welcome as a starter: 1 bowl, no smântână or just 1 tbsp light.</div></div><div class="foot"><span>@george.mousa1</span><span>+963 987 461 750</span></div></div><div class="page" data-document-role="page" data-label="Pre-workout">
+<div class="head"><div><div class="day">MEAL 03 · 17:30</div><div class="title">Pre-<span class=y>workout</span></div></div><img class="logo" src="https://cdn.jsdelivr.net/gh/mousageorge612-dot/george-mousa-fitness@3e7fe8d6d95b6cc9469128acb735265666508f20/canva/gm-logo.png" alt="George Mousa"></div>
+<div class="body"><div class="opt"><div class="t"><span>Option A</span><span class=k>~300 kcal</span></div><ul><li>1 banana</li><li>150 g Skyr or Greek yogurt 0%</li><li>10 g dark chocolate</li></ul></div><div class="opt"><div class="t"><span>Option B</span><span class=k>~300 kcal</span></div><ul><li>2 slices rye bread</li><li>60 g turkey ham + 1 slice light cheese</li><li>Vegetables</li></ul></div><div class="opt"><div class="t"><span>Option C</span><span class=k>~300 kcal</span></div><ul><li>1 scoop whey protein in water</li><li>1 banana</li><li>10 g almonds</li></ul></div><div class="note">Eat <b>1.5-2 hours before training</b> so you have energy and no heavy stomach.</div></div><div class="foot"><span>@george.mousa1</span><span>+963 987 461 750</span></div></div><div class="page" data-document-role="page" data-label="Dinner">
+<div class="head"><div><div class="day">MEAL 04 · 20:45</div><div class="title">Dinner · <span class=y>after training</span></div></div><img class="logo" src="https://cdn.jsdelivr.net/gh/mousageorge612-dot/george-mousa-fitness@3e7fe8d6d95b6cc9469128acb735265666508f20/canva/gm-logo.png" alt="George Mousa"></div>
+<div class="body"><div class="opt"><div class="t"><span>Protein · 1 palm</span></div><ul><li>Chicken or fish (salmon max 2× per week)</li><li>Lean beef</li><li>Or 3 eggs + 100 g egg whites</li></ul></div><div class="opt"><div class="t"><span>Carbs · ½-1 fist</span></div><ul><li>150 g potatoes, or</li><li>100 g cooked rice, or 1 slice rye bread</li></ul></div><div class="opt"><div class="t"><span>Vegetables · 2 hands + 1 tsp olive oil</span></div><ul><li>Big salad or cooked vegetables</li></ul></div><div class="note">Finish dinner by <b>21:15</b> so you sleep well at 22:00.</div></div><div class="foot"><span>@george.mousa1</span><span>+963 987 461 750</span></div></div><div class="page" data-document-role="page" data-label="Sweet treat">
+<div class="head"><div><div class="day">EVERY DAY · ~120 KCAL</div><div class="title">Sweet <span class=y>treat</span> 🍫</div></div><img class="logo" src="https://cdn.jsdelivr.net/gh/mousageorge612-dot/george-mousa-fitness@3e7fe8d6d95b6cc9469128acb735265666508f20/canva/gm-logo.png" alt="George Mousa"></div>
+<div class="body"><div class="note">You love sweets, so we keep <b>one small sweet every day</b>. It helps you stay on the plan. Choose 1:</div><div class="opt"><div class="t"><span>Option A</span></div><ul><li>20 g dark chocolate (70%+)</li></ul></div><div class="opt"><div class="t"><span>Option B</span></div><ul><li>150 g Greek yogurt 0% + cocoa + sweetener or 1 tsp honey</li></ul></div><div class="opt"><div class="t"><span>Option C</span></div><ul><li>1 small apple baked with cinnamon + 1 tsp honey</li></ul></div><div class="opt"><div class="t"><span>Option D</span></div><ul><li>1 protein bar (under 200 kcal)</li></ul></div><div class="sec">Free meal</div><div class="note"><b>1 meal per week</b> (e.g. Saturday after training). Enjoy it with no guilt, then back to the plan. A free meal, not a free day.</div></div><div class="foot"><span>@george.mousa1</span><span>+963 987 461 750</span></div></div><div class="page" data-document-role="page" data-label="Rules">
+<div class="head"><div><div class="day">NUTRITION RULES</div><div class="title">Golden <span class=y>rules</span></div></div><img class="logo" src="https://cdn.jsdelivr.net/gh/mousageorge612-dot/george-mousa-fitness@3e7fe8d6d95b6cc9469128acb735265666508f20/canva/gm-logo.png" alt="George Mousa"></div>
+<div class="body"><div class="rule"><div class="n">1</div><div>Protein in every meal.</div></div><div class="rule"><div class="n">2</div><div>Water 2.5-3 L per day: 1 glass when you wake up, 1 with each meal.</div></div><div class="rule"><div class="n">3</div><div>Drinks: water, coffee, tea, zero drinks. No juice or sugary drinks.</div></div><div class="rule"><div class="n">4</div><div>Alcohol: max 1 drink per week.</div></div><div class="rule"><div class="n">5</div><div>Grill, bake or boil. Cook with little oil, no frying.</div></div><div class="rule"><div class="n">6</div><div>Hungry? Add more vegetables first.</div></div><div class="rule"><div class="n">7</div><div>Sleep 22:00-07:00. Good sleep = less hunger.</div></div><div class="rule"><div class="n">8</div><div>Weigh yourself 3 mornings per week, after the toilet, before eating.</div></div></div><div class="foot"><span>@george.mousa1</span><span>+963 987 461 750</span></div></div><div class="page" data-document-role="page" data-label="Weekly check-in">
+<div class="head"><div><div class="day">EVERY SUNDAY</div><div class="title">Weekly <span class=y>check-in</span></div></div><img class="logo" src="https://cdn.jsdelivr.net/gh/mousageorge612-dot/george-mousa-fitness@3e7fe8d6d95b6cc9469128acb735265666508f20/canva/gm-logo.png" alt="George Mousa"></div>
+<div class="body"><div class="note">Send these to your coach on <b>WhatsApp every Sunday</b>. We adjust your plan based on them.</div><div class="rule"><div class="n">1</div><div>Average weight (from your 3 morning weigh-ins)</div></div><div class="rule"><div class="n">2</div><div>Waist measurement at the belly button</div></div><div class="rule"><div class="n">3</div><div>3 photos: front, side, back (same light, same place)</div></div><div class="rule"><div class="n">4</div><div>Training: how many sessions done? Energy 1-10?</div></div><div class="rule"><div class="n">5</div><div>Nutrition: how many days on plan? Hunger 1-10?</div></div><div class="rule"><div class="n">6</div><div>Anything hard this week? Tell me, we fix it together.</div></div></div><div class="foot"><span>@george.mousa1</span><span>+963 987 461 750</span></div></div>
+</body></html>
