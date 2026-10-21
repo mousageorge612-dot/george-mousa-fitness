@@ -1384,3 +1384,15 @@ input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 
 /* Store banner: wide (Facebook-cover ratio), full width above the info card */
 .store-intro-grid{grid-template-columns:1fr !important;}
 .card.store-banner-card > img:not(.logo):not(.footer-logo){aspect-ratio:16/9 !important; height:auto !important; object-fit:cover !important;}
+
+/* Private training at GYM APEX */
+.private-grid{align-items:start}
+.private-logo{display:block;width:140px !important;max-width:40%;aspect-ratio:1/1 !important;height:auto !important;object-fit:contain !important;border-radius:18px;margin:0 auto 16px}
+.private-plans{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+.private-plan{border:1px solid #2c2c2c;border-radius:16px;padding:14px;background:#0d0d0d}
+.private-plan.recommended{border-color:var(--gold)}
+.private-plan .price{font-size:34px}
+.private-plan p{color:var(--muted);font-size:13px;margin:0}
+.private-partner{border:1px dashed #4a4a4a;border-radius:14px;padding:12px;margin-bottom:14px}
+#privateForm .days{grid-template-columns:repeat(4,1fr)}
+@media (max-width:700px){.private-plans{grid-template-columns:1fr}}

@@ -26,7 +26,7 @@
 <div class="container navbar">
 <a href="#top"><img alt="George Mousa Online Fitness Training" class="logo" src="assets/images/logo.png"/></a>
 <nav class="navlinks">
-<a href="#calculator">الحاسبة المجانية</a><a href="#app">التطبيق المجاني</a><a href="#packages">الباقات</a><a href="#results">النتائج</a>
+<a href="#calculator">الحاسبة المجانية</a><a href="#app">التطبيق المجاني</a><a href="#packages">الباقات</a><a href="#private">برايفت APEX</a><a href="#results">النتائج</a>
 <a href="#store">المتجر</a><a href="#about">عن الكوتش</a><a href="#faq">الأسئلة</a>
 </nav>
 <a class="btn whatsapp" href="https://wa.me/963987461750?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%83%D9%88%D8%AA%D8%B4%20%D8%AC%D9%88%D8%B1%D8%AC%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D9%85%D8%B9%D8%B1%D9%81%D8%A9%20%D8%A7%D9%84%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9%20%D9%84%D9%8A." target="_blank">واتساب</a>
@@ -298,6 +298,68 @@
 </div>
 </section>
 
+<!-- Private training at GYM APEX -->
+<section class="section" id="private">
+<div class="container">
+<div class="section-head">
+<div><div class="eyebrow">PRIVATE TRAINING · GYM APEX</div><h2>تدريب برايفت معي في <bdi style="color:var(--gold)">GYM APEX</bdi> – السقيلبية</h2></div>
+<p>إذا كنت بالسقيلبية أو قريب منها، فيك تتمرن معي وجهاً لوجه بالنادي: برنامج مخصص، تصحيح الأداء بكل تمرين، ومتابعة مباشرة بكل جلسة.</p>
+</div>
+<div class="grid grid-2 private-grid">
+<div class="card private-info">
+<img class="private-logo" src="assets/images/apex-gym-logo.webp" alt="شعار GYM APEX" loading="lazy"/>
+<div class="private-plans">
+<div class="private-plan">
+<div class="eyebrow">اشتراك فردي</div>
+<div class="price">60$ <small>/ شهرياً</small></div>
+<p>أنت والكوتش فقط، وكل الجلسة إلك.</p>
+</div>
+<div class="private-plan recommended">
+<div class="eyebrow">اشتراك ثنائي</div>
+<div class="price">30$ <small>/ للشخص شهرياً</small></div>
+<p>صديقان أو صديقتان بيتمرنوا مع بعض بنفس الوقت وبيتقاسموا اشتراك الـ <bdi>60$</bdi>.</p>
+</div>
+</div>
+<div class="check-list">
+<div class="check"><b>✓</b><span>برنامج تدريب مخصص حسب هدفك ومستواك</span></div>
+<div class="check"><b>✓</b><span>إشراف مباشر وتصحيح الأداء بكل تمرين</span></div>
+<div class="check"><b>✓</b><span>توجيه غذائي يناسب هدفك</span></div>
+<div class="check"><b>✓</b><span>متابعة التقدم شهرياً</span></div>
+</div>
+</div>
+<div class="card">
+<h3 style="margin-top:0">استمارة الاشتراك بالبرايفت</h3>
+<form id="privateForm" onsubmit="return submitPrivateForm(event)">
+<div class="field"><label>نوع الاشتراك *</label><div class="options">
+<label class="option"><input type="radio" name="p_type" value="فردي" checked/> فردي – <bdi>60$</bdi></label>
+<label class="option"><input type="radio" name="p_type" value="ثنائي"/> ثنائي مع صديق/ة – <bdi>30$</bdi> للشخص</label>
+</div></div>
+<div class="grid grid-2">
+<div class="field"><label>الاسم الكامل *</label><input name="p_name" required/></div>
+<div class="field"><label>رقم واتساب *</label><input name="p_phone" type="tel" required/></div>
+<div class="field"><label>العمر *</label><input name="p_age" type="number" min="12" required/></div>
+<div class="field"><label>الجنس *</label><select name="p_gender" required><option value="">اختر...</option><option>ذكر</option><option>أنثى</option></select></div>
+</div>
+<div class="private-partner" id="privatePartner" hidden>
+<p class="admin-note">بالاشتراك الثنائي لازم تكونوا صديقين أو صديقتين وتتمرنوا بنفس الوقت.</p>
+<div class="grid grid-2">
+<div class="field"><label>اسم الشريك/ة *</label><input name="p_partner_name"/></div>
+<div class="field"><label>رقم واتساب الشريك/ة *</label><input name="p_partner_phone" type="tel"/></div>
+</div>
+</div>
+<div class="grid grid-2">
+<div class="field"><label>الهدف *</label><select name="p_goal" required><option value="">اختر...</option><option>خسارة دهون</option><option>زيادة كتلة عضلية</option><option>شد الجسم وتحسين اللياقة</option><option>زيادة القوة</option></select></div>
+<div class="field"><label>مستوى الخبرة *</label><select name="p_level" required><option value="">اختر...</option><option>مبتدئ</option><option>متوسط</option><option>متقدم</option></select></div>
+</div>
+<div class="field"><label>الوقت المفضل للتمرين *</label><select name="p_time" required><option value="">اختر...</option><option>صباحاً</option><option>ظهراً</option><option>عصراً</option><option>مساءً</option></select></div>
+<div class="field"><label>الأيام المفضلة</label><div class="days" id="privateDays"></div></div>
+<div class="field"><label>إصابات أو أمراض أو ملاحظات</label><textarea name="p_notes" rows="3"></textarea></div>
+<button class="btn whatsapp full" type="submit">إرسال الطلب على واتساب</button>
+</form>
+</div>
+</div>
+</div>
+</section>
 <section class="section alt" id="store">
   <div class="container">
     <div class="section-head">
@@ -605,5 +667,6 @@
 
 
 <script src="assets/js/app.js" defer></script>
+<script src="assets/js/private.js" defer></script>
 </body>
 </html>
