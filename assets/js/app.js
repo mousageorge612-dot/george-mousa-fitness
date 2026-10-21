@@ -471,3 +471,19 @@ initDays();restoreDraft();showStep();
     }
   });
 })();
+
+// Direct form links: /?join=apex-solo | apex-duo | monthly | 3months | 6months
+(function(){
+  const JOIN = {
+    "apex-solo": ["برايفت GYM APEX — فردي", "60$ شهرياً"],
+    "apex-duo": ["برايفت GYM APEX — ثنائي", "60$ شهرياً مقسومة (30$ للشخص)"],
+    "monthly": ["الباقة الشهرية", "49$"],
+    "3months": ["باقة 3 أشهر", "120$"],
+    "6months": ["باقة 6 أشهر", "295$"]
+  };
+  const pick = JOIN[new URLSearchParams(location.search).get("join")];
+  if(!pick) return;
+  const open = () => choosePackage(pick[0], pick[1]);
+  if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", open);
+  else open();
+})();
