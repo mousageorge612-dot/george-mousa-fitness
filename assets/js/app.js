@@ -45,6 +45,11 @@ function choosePackage(name, price){
   form.elements.selected_price.value = price;
   if(title) title.textContent = `${name} — ${price}`;
 
+  const duo = name.includes("ثنائي");
+  const partner = document.getElementById("partnerFields");
+  if(partner) partner.hidden = !duo;
+  form.querySelectorAll("[data-duo]").forEach(el => el.required = duo);
+
   currentStep = 1;
   showStep();
 
@@ -166,11 +171,20 @@ function buildSummary(){
 }
 
 function buildMessage(){
-  return `طلب اشتراك تدريب أونلاين — George Mousa
+  const pkg = gv("selected_package");
+  const isPrivate = pkg.includes("برايفت");
+  const partner = pkg.includes("ثنائي") ? `
+👥 الشريك/ة (اشتراك ثنائي):
+الاسم: ${gv("partner_name")}
+واتساب: ${gv("partner_whatsapp")}
+العمر: ${gv("partner_age")}
+الهدف: ${gv("partner_goal")}
+` : "";
+  return `${isPrivate ? "طلب اشتراك تدريب برايفت — GYM APEX السقيلبية" : "طلب اشتراك تدريب أونلاين — George Mousa"}
 
 📦 الباقة:
-${gv("selected_package")} — ${gv("selected_price")}
-
+${pkg} — ${gv("selected_price")}
+${partner}
 👤 البيانات الأساسية:
 الاسم: ${gv("name")}
 العمر: ${gv("age")}

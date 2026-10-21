@@ -327,35 +327,16 @@
 <div class="check"><b>✓</b><span>متابعة التقدم شهرياً</span></div>
 </div>
 </div>
-<div class="card">
+<div class="card private-signup">
 <h3 style="margin-top:0">استمارة الاشتراك بالبرايفت</h3>
-<form id="privateForm" onsubmit="return submitPrivateForm(event)">
-<div class="field"><label>نوع الاشتراك *</label><div class="options">
-<label class="option"><input type="radio" name="p_type" value="فردي" checked/> فردي – <bdi>60$</bdi></label>
-<label class="option"><input type="radio" name="p_type" value="ثنائي"/> ثنائي مع صديق/ة – <bdi>30$</bdi> للشخص</label>
-</div></div>
-<div class="grid grid-2">
-<div class="field"><label>الاسم الكامل *</label><input name="p_name" required/></div>
-<div class="field"><label>رقم واتساب *</label><input name="p_phone" type="tel" required/></div>
-<div class="field"><label>العمر *</label><input name="p_age" type="number" min="12" required/></div>
-<div class="field"><label>الجنس *</label><select name="p_gender" required><option value="">اختر...</option><option>ذكر</option><option>أنثى</option></select></div>
+<p style="color:#d0d0d0">نفس استمارة التدريب الأونلاين الكاملة: بياناتك، هدفك، أيام وموعد التمرين، الصحة والإصابات، التغذية، النوم ونمط الحياة. هيك بجهزلك برنامجك قبل أول جلسة.</p>
+<div class="check-list">
+<div class="check"><b>1</b><span>اختر فردي أو ثنائي</span></div>
+<div class="check"><b>2</b><span>عبّئ الاستمارة خطوة بخطوة</span></div>
+<div class="check"><b>3</b><span>بتوصلني بياناتك على واتساب ومنحدد أول جلسة</span></div>
 </div>
-<div class="private-partner" id="privatePartner" hidden>
-<p class="admin-note">بالاشتراك الثنائي لازم تكونوا صديقين أو صديقتين وتتمرنوا بنفس الوقت.</p>
-<div class="grid grid-2">
-<div class="field"><label>اسم الشريك/ة *</label><input name="p_partner_name"/></div>
-<div class="field"><label>رقم واتساب الشريك/ة *</label><input name="p_partner_phone" type="tel"/></div>
-</div>
-</div>
-<div class="grid grid-2">
-<div class="field"><label>الهدف *</label><select name="p_goal" required><option value="">اختر...</option><option>خسارة دهون</option><option>زيادة كتلة عضلية</option><option>شد الجسم وتحسين اللياقة</option><option>زيادة القوة</option></select></div>
-<div class="field"><label>مستوى الخبرة *</label><select name="p_level" required><option value="">اختر...</option><option>مبتدئ</option><option>متوسط</option><option>متقدم</option></select></div>
-</div>
-<div class="field"><label>الوقت المفضل للتمرين *</label><select name="p_time" required><option value="">اختر...</option><option>صباحاً</option><option>ظهراً</option><option>عصراً</option><option>مساءً</option></select></div>
-<div class="field"><label>الأيام المفضلة</label><div class="days" id="privateDays"></div></div>
-<div class="field"><label>إصابات أو أمراض أو ملاحظات</label><textarea name="p_notes" rows="3"></textarea></div>
-<button class="btn whatsapp full" type="submit">إرسال الطلب على واتساب</button>
-</form>
+<button class="btn full" style="margin-top:18px" onclick="choosePackage('برايفت GYM APEX — فردي','60$ شهرياً')">اشتراك فردي – <bdi>60$</bdi></button>
+<button class="btn full whatsapp" style="margin-top:10px" onclick="choosePackage('برايفت GYM APEX — ثنائي','60$ شهرياً مقسومة (30$ للشخص)')">اشتراك ثنائي مع صديق/ة – <bdi>30$</bdi> للشخص</button>
 </div>
 </div>
 </div>
@@ -554,6 +535,15 @@
 <div class="field"><label>المدينة / الدولة *</label><input name="location" required=""/></div>
 <div class="field"><label>رقم واتساب *</label><input name="client_whatsapp" required="" type="tel"/></div>
 </div>
+<div class="private-partner" id="partnerFields" hidden>
+<p class="admin-note">الاشتراك الثنائي: صديقان أو صديقتان بيتمرنوا بنفس الوقت وبيتقاسموا الاشتراك.</p>
+<div class="grid grid-2">
+<div class="field"><label>اسم الشريك/ة *</label><input name="partner_name" data-duo/></div>
+<div class="field"><label>رقم واتساب الشريك/ة *</label><input name="partner_whatsapp" type="tel" data-duo/></div>
+<div class="field"><label>عمر الشريك/ة *</label><input name="partner_age" type="number" min="12" data-duo/></div>
+<div class="field"><label>هدف الشريك/ة</label><input name="partner_goal"/></div>
+</div>
+</div>
 </section>
 <section class="form-step" data-step="2">
 <h3>2. هدفك</h3>
@@ -667,6 +657,5 @@
 
 
 <script src="assets/js/app.js" defer></script>
-<script src="assets/js/private.js" defer></script>
 </body>
 </html>
