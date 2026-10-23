@@ -184,12 +184,12 @@
   function render() {
     var app = $('#app');
     if (!S.profile) { app.innerHTML = onboardView(); bindOnboard(); return; }
-    var titles = { today: 'عاداتي اليوم', challenges: 'التحديات', fit: 'اللياقة', progress: 'تقدّمي' };
+    var titles = { today: 'عاداتي اليوم', challenges: 'التحديات', fit: 'النادي', progress: 'تقدّمي' };
     app.innerHTML =
-      '<div class="shell"><header class="topbar"><div class="t"><img src="assets/img/logo.png" alt=""><div>' + titles[tab] + '<small>GM Habits</small></div></div>' +
+      '<div class="shell"><header class="topbar"><div class="t"><img src="assets/img/logo.png" alt=""><div>' + titles[tab] + '<small class="en">GM HABITS</small></div></div>' +
       '<button class="iconbtn" data-act="settings" aria-label="الإعدادات">' + I.gear + '</button></header>' +
       '<main class="page" id="page"></main>' +
-      '<nav class="tabbar five">' + tabBtn('today', 'اليوم', I.today) + tabBtn('challenges', 'التحديات', I.target) + tabBtn('fit', 'اللياقة', I.fit) + tabBtn('progress', 'تقدّمي', I.stats) + '</nav></div>';
+      '<nav class="tabbar five">' + tabBtn('today', 'اليوم', I.today) + tabBtn('challenges', 'التحديات', I.target) + tabBtn('fit', 'النادي', I.fit) + tabBtn('progress', 'تقدّمي', I.stats) + '</nav></div>';
     ({ today: todayView, challenges: challengesView, fit: fitView, progress: progressView })[tab]($('#page'));
   }
   function tabBtn(k, t, ic) { return '<button class="tab' + (tab === k ? ' on' : '') + '" data-tab="' + k + '">' + ic + '<span>' + t + '</span></button>'; }
@@ -222,7 +222,7 @@
     var r = 36, c = 2 * Math.PI * r;
     return '<svg viewBox="0 0 86 86" style="width:' + (size || 86) + 'px;height:' + (size || 86) + 'px;flex:none"><circle cx="43" cy="43" r="' + r + '" stroke="#222" stroke-width="9" fill="none"/>' +
       '<circle cx="43" cy="43" r="' + r + '" stroke="#ffb800" stroke-width="9" fill="none" stroke-linecap="round" stroke-dasharray="' + (c * pct / 100) + ' ' + c + '" transform="rotate(-90 43 43)"/>' +
-      '<text x="43" y="50" text-anchor="middle" fill="#fff" font-size="19" font-weight="900" font-family="Cairo">' + pct + '%</text></svg>';
+      '<text x="43" y="50" text-anchor="middle" fill="#fff" font-size="19" font-weight="900" font-family="inherit">' + pct + '%</text></svg>';
   }
   function quoteOfDay() { var q = QUOTES[daysBetween('2024-01-01', todayStr()) % QUOTES.length]; return '<div class="bigquote">«' + q[0] + '»<small>' + q[1] + '</small></div>'; }
   function waLink(text) { return 'https://wa.me/' + COACH_WA + '?text=' + encodeURIComponent(text); }
@@ -272,7 +272,7 @@
     var d = new Date();
     page.innerHTML =
       installHint() +
-      '<section class="hero" style="min-height:200px"><div class="hero-bg"></div><div class="hero-c">' +
+      '<section class="hero"><div class="hero-bg"></div><div class="hero-c">' +
       '<span class="pill">' + WDAYS[d.getDay()] + ' ' + fmtDate(today) + '</span>' +
       '<div class="hi">أهلاً ' + esc(S.profile.name) + ' 👋</div><h2>1% أحسن من مبارح</h2></div></section>' +
       (due.length ? '<section class="card daytop">' + ring(pct, 76) + '<div class="txt"><b>' + num(done) + ' من ' + num(due.length) + ' عادات اليوم</b><small>' +
@@ -384,7 +384,7 @@
     var cs = S.challenges.filter(function (c) { return !c.archived; });
     var active = cs.filter(function (c) { return todayStr() <= chEnd(c); }), done = cs.filter(function (c) { return todayStr() > chEnd(c); });
     page.innerHTML =
-      '<section class="hero" style="min-height:190px"><div class="hero-bg mirror"></div><div class="hero-c"><span class="pill">تحدّى حالك</span><h2>التحديات</h2><div class="hi">أيام محددة، هدف واضح، وسلسلة ما بدك تكسرها</div></div></section>' +
+      '<section class="hero"><div class="hero-bg"></div><div class="hero-c"><span class="pill">تحدّى حالك</span><h2>التحديات</h2><div class="hi">أيام محددة، هدف واضح، وسلسلة ما بدك تكسرها</div></div></section>' +
       '<button class="btn" data-act="chNew">+ ابدأ تحدّي</button>' +
       (active.length ? active.map(chCard).join('') : '<div class="card empty">اختار تحدّي جاهز متل "30 يوم بدون سكر"، أو اعمل تحدّي خاص فيك.</div>') +
       (done.length ? '<section class="card"><h3>تحديات خلصت 🏁</h3><div class="list">' + done.map(function (c) {
@@ -433,7 +433,7 @@
   }
   function fitView(page) {
     if (!S.profile.trains) {
-      page.innerHTML = '<section class="hero" style="min-height:220px"><div class="hero-bg"></div><div class="hero-c"><span class="pill">لياقة</span><h2>جاهز تبلّش تتمرن؟</h2></div></section>' +
+      page.innerHTML = '<section class="hero"><div class="hero-bg"></div><div class="hero-c"><span class="pill">لياقة</span><h2>جاهز تبلّش تتمرن؟</h2></div></section>' +
         '<div class="card empty">فعّل قسم اللياقة لتسجّل تمارينك وشرب المي ووزنك، وتحسب سعراتك وبروتينك ببلاش.<br><br><button class="btn sm" data-act="enableFit">فعّل قسم اللياقة</button></div>' + coachCta();
       return;
     }
@@ -441,7 +441,7 @@
     var tw = S.fit.workouts[t], water = S.fit.water[t] || 0;
     var ws = S.fit.weights.slice().sort(function (a, b) { return a.date < b.date ? -1 : 1; });
     page.innerHTML =
-      '<section class="hero" style="min-height:190px"><div class="hero-bg"></div><div class="hero-c"><span class="pill">' + num(count) + ' من ' + num(S.fit.weekGoal) + ' تمارين هالأسبوع</span><h2>كل تمرين بيحسب</h2></div></section>' +
+      '<section class="hero"><div class="hero-bg"></div><div class="hero-c"><span class="pill">' + num(count) + ' من ' + num(S.fit.weekGoal) + ' تمارين هالأسبوع</span><h2>كل تمرين بيحسب</h2></div></section>' +
       '<section class="card"><h3><span>🗓️ تمارين الأسبوع</span><span class="sub">الهدف ' + num(S.fit.weekGoal) + '</span></h3><div class="week">' +
       wk.map(function (d) { var w = S.fit.workouts[d]; return '<div class="' + (w && w.type !== 'rest' ? 'on' : '') + (d === t ? ' today' : '') + '">' + WD_SHORT[parseD(d).getDay()] + '<b>' + (w ? WK_TYPES[w.type].split(' ')[1] : '·') + '</b></div>'; }).join('') + '</div>' +
       '<div style="margin-top:12px">' + (tw ? '<button class="btn ghost" data-act="logWorkout">✅ ' + WK_TYPES[tw.type] + (tw.min ? ' · ' + num(tw.min) + ' دقيقة' : '') + ' (تعديل)</button>' : '<button class="btn" data-act="logWorkout">+ سجّل تمرين اليوم</button>') + '</div></section>' +
@@ -662,7 +662,7 @@
         '<button class="btn ghost" type="button" data-act="coach">تواصل مع الكوتش جورج</button>' +
         '<button class="btn ghost" type="button" data-act="site">موقع George Mousa</button>' +
         '<button class="btn danger" type="button" data-act="reset">مسح كل البيانات</button>' +
-        '<p class="muted" style="margin:0;font-size:12px;text-align:center">بياناتك محفوظة على جهازك فقط، وما في حساب ولا سيرفر.<br>GM Habits v1.2 · مجاني من George Mousa Online Coaching</p></form>', function (b) {
+        '<p class="muted" style="margin:0;font-size:12px;text-align:center">بياناتك محفوظة على جهازك فقط، وما في حساب ولا سيرفر.<br>GM Habits v2.0 · مجاني من George Mousa Online Coaching</p></form>', function (b) {
         var f = $('#sf', b); bindChips(f);
         f.addEventListener('submit', function (e) {
           e.preventDefault(); p.name = f.name.value.trim(); p.identity = chipVals(f, 'identity'); p.trains = chipVal(f, 'trains') === '1';
