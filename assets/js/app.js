@@ -330,8 +330,8 @@ document.addEventListener("change", saveDraft);
 
 
 const PRODUCTS = [
-  {id:1,title:"Pro Split — 5 Days",subtitle:"برنامج رجال — مستوى متقدم",category:"رجال",price:"12$",paid:true,cover:"assets/images/pro-split-5-days.webp",url:""},
-  {id:2,title:"Pro Split — 4 Days",subtitle:"برنامج رجال — مستوى متوسط",category:"رجال",price:"9$",paid:true,cover:"assets/images/pro-split-4-days.webp",url:""},
+  {id:1,title:"Pro Split — 5 Days",subtitle:"برنامج رجال — مستوى متقدم",category:"رجال",price:"9$",paid:true,cover:"assets/images/pro-split-5-days.webp",url:""},
+  {id:2,title:"Pro Split — 4 Days",subtitle:"برنامج رجال — مستوى متوسط",category:"رجال",price:"7$",paid:true,cover:"assets/images/pro-split-4-days.webp",url:""},
   {id:3,title:"Arnold Split — 3 Days",subtitle:"برنامج رجال — مستوى مبتدئ",category:"رجال",price:"مجاني",paid:false,cover:"assets/images/arnold-split-3-days.webp",url:"#"},
   {id:4,title:"برنامج التأسيس للسيدات",subtitle:"شد الجسم وتقوية العضلات — 8 أسابيع",category:"سيدات",price:"مجاني",paid:false,cover:"assets/images/women-foundation-8-weeks.webp",url:"#"}
 ];
