@@ -478,8 +478,8 @@ initDays();restoreDraft();showStep();
     "apex-solo": ["برايفت GYM APEX — فردي", "60$ شهرياً"],
     "apex-duo": ["برايفت GYM APEX — ثنائي", "60$ شهرياً مقسومة (30$ للشخص)"],
     "monthly": ["الباقة الشهرية", "49$"],
-    "3months": ["باقة 3 أشهر", "120$"],
-    "6months": ["باقة 6 أشهر", "295$"]
+    "3months": ["باقة 3 أشهر", "99$"],
+    "6months": ["باقة 6 أشهر", "149$"]
   };
   const pick = JOIN[new URLSearchParams(location.search).get("join")];
   if(!pick) return;
