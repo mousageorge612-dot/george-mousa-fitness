@@ -35,3 +35,15 @@ body{background:#0b0b0b;font-family:Cairo,sans-serif}
 .toc .r{display:flex;justify-content:space-between;background:#161616;border:1px solid #262626;border-radius:10px;padding:3px 14px;font-weight:800;font-size:13px}
 .toc .r span:last-child{color:#FFB800;font-family:'Bebas Neue';font-size:18px}
 .cmp2 .name{font-size:11px;line-height:1.2}.cmp2 .en{font-size:8px}
+/* lean v2: fewer Canva elements per card */
+.card{border:none}
+.chip{background:none;border:none;border-left:0;padding:0 2px}
+.chip .v,.chip .l{display:inline}
+.ph.has{border:none;background:none}
+.ph.gap{border:none;background:#1f1f1f}
+.yt a{display:block;width:44px}
+.chip{line-height:1.05;width:58px}
+.chip .v{font-size:14px;line-height:1.1;font-weight:900;color:#fff}
+.chip .l{font-size:9px;line-height:1.1;color:#aaa}
+.cmp .chip .v{font-size:12px}.cmp .chip .l{font-size:8px}
+.info{overflow:visible}

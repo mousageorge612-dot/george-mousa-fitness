@@ -41,9 +41,9 @@ def card(n,it):
     if it['img']:
         ph=f'<div class="ph has"><img src="{CDN}lib2/{it["img"]}.jpg" alt="{en}"></div>'
     else:
-        ph='<div class="ph">لا توجد صورة مطابقة</div>'
+        ph='<div class="ph gap">لا توجد صورة مطابقة</div>'
     return (f'<div class="card cardL{cmp}"><div class="num">{n}</div><div class="info"><div><div class="name">{name}</div><div class="en">{en}</div></div>'
-      f'<div class="chips"><div class="chip"><div class="v">{s}</div><div class="l">مجموعات</div></div><div class="chip"><div class="v">{r}</div><div class="l">تكرار</div></div><div class="chip"><div class="v">{rest}</div><div class="l">راحة</div></div></div></div>'
+      f'<div class="chips"><div class="chip"><span class="v">{s}</span><br><span class="l">مجموعات</span></div><div class="chip"><span class="v">{r}</span><br><span class="l">تكرار</span></div><div class="chip"><span class="v">{rest}</span><br><span class="l">راحة</span></div></div></div>'
       f'<div class="media">{ph}<div class="yt"><a href="{it["url"]}">▶<br>الشرح</a></div></div></div>')
 def build(fname,title_en,title_ar,blurb,sections):
     pages=[];toc=[];pno=3
