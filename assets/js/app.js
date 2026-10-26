@@ -6,8 +6,8 @@ const FREE_PDFS = {
     url: "downloads/GM_Arnold_Split_3_Days.pdf"
   },
   4: {
-    filename: "GM_Her_Split_4_Days.pdf",
-    url: "downloads/GM_Her_Split_4_Days.pdf"
+    filename: "GM_Her_Split_3_Days.pdf",
+    url: "downloads/GM_Her_Split_3_Days.pdf"
   }
 };
 
@@ -333,7 +333,7 @@ const PRODUCTS = [
   {id:1,title:"Pro Split — 5 Days",subtitle:"برنامج رجال — مستوى متقدم",category:"رجال",price:"9$",paid:true,cover:"assets/images/pro-split-5-days.webp",url:""},
   {id:2,title:"Pro Split — 4 Days",subtitle:"برنامج رجال — مستوى متوسط",category:"رجال",price:"7$",paid:true,cover:"assets/images/pro-split-4-days.webp",url:""},
   {id:3,title:"Arnold Split — 3 Days",subtitle:"برنامج رجال — مستوى مبتدئ",category:"رجال",price:"مجاني",paid:false,cover:"assets/images/arnold-split-3-days.webp",url:"#"},
-  {id:4,title:"HER SPLIT — 4 Days",subtitle:"برنامج سيدات — شد الجسم وتقوية العضلات",category:"سيدات",price:"مجاني",paid:false,cover:"assets/images/women-foundation-8-weeks.webp",url:"#"}
+  {id:4,title:"HER SPLIT — 3 Days",subtitle:"برنامج سيدات — شد الجسم وتقوية العضلات",category:"سيدات",price:"مجاني",paid:false,cover:"assets/images/women-foundation-8-weeks.webp",url:"#"}
 ];
 
 function renderStore(filter="الكل"){
