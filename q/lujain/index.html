@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>استمارة قبل البدء | George Mousa</title>
+<link rel="icon" href="/favicon-32x32.png">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#ffb800;--bg:#000;--card:#111;--line:#262626;--muted:#b8b8b8}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:#fff;font-family:Cairo,system-ui,sans-serif;line-height:1.7}
+.wrap{max-width:720px;margin:0 auto;padding:24px 16px 120px}
+header{text-align:center;margin-bottom:20px}
+header img{height:42px}
+h1{font-size:1.5rem;margin:12px 0 4px;font-weight:900}
+h1 span{color:var(--gold)}
+.lead{color:var(--muted);font-size:.95rem;margin:0}
+.progress{position:sticky;top:0;z-index:5;background:#000;padding:8px 0}
+.bar{height:6px;background:#1a1a1a;border-radius:9px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .3s}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin:16px 0}
+section h2{margin:0 0 8px;font-size:1.1rem;color:var(--gold)}
+.q{margin:14px 0}
+.q>label,.q>.t{display:block;font-weight:700;margin-bottom:6px}
+.hint{color:var(--muted);font-size:.85rem;font-weight:400}
+input[type=text],input[type=tel],textarea{width:100%;background:#000;color:#fff;border:1px solid #333;border-radius:10px;padding:10px 12px;font:inherit}
+textarea{min-height:70px;resize:vertical}
+input:focus,textarea:focus{outline:2px solid var(--gold);border-color:transparent}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts label{display:flex;align-items:center;gap:6px;background:#000;border:1px solid #333;border-radius:999px;padding:6px 12px;cursor:pointer;font-weight:600;font-size:.92rem}
+.opts input{accent-color:var(--gold)}
+.opts label:has(input:checked){border-color:var(--gold);color:var(--gold)}
+.note{font-size:.85rem;color:var(--muted);text-align:center;margin-top:12px}
+.send{position:fixed;inset:auto 0 0 0;background:linear-gradient(transparent,#000 35%);padding:24px 16px 16px}
+.send button{display:block;width:100%;max-width:720px;margin:0 auto;background:var(--gold);color:#000;border:0;border-radius:14px;padding:14px;font:900 1.05rem Cairo,sans-serif;cursor:pointer}
+.err{color:#ff6b6b;font-size:.9rem;display:none;margin-top:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<img src="/assets/images/logo.png" alt="George Mousa">
+<h1>استمارة <span>قبل البدء</span></h1>
+<p class="lead">هالأسئلة بتساعدني جهزلك نظام أكل وتمرين مناسب لحالتك بالضبط. جاوبي على قد ما بتعرفي، وإذا ما بتعرفي شي اكتبي "ما بعرف". بالآخر اضغطي إرسال وبتوصلني الأجوبة على واتساب.</p>
+</header>
+<div class="progress"><div class="bar"><i id="bar"></i></div></div>
+
+<form id="f" novalidate>
+<section>
+<h2>معلوماتك</h2>
+<div class="q"><label for="name">الاسم الكامل *</label><input type="text" id="name" data-q="الاسم" value="لجين وهبه"><div class="err" id="nameErr">اكتبي اسمك لو سمحتي</div></div>
+</section>
+
+<section>
+<h2>الجرثومة والمعدة</h2>
+<div class="q"><label>1. شو نوع الجرثومة؟ ومتى انكشفت؟ <span class="hint">(مثلاً جرثومة المعدة الحلزونية H. pylori)</span></label><textarea data-q="نوع الجرثومة ومتى انكشفت"></textarea></div>
+<div class="q"><span class="t">2. عم تاخدي علاج للجرثومة هلق؟</span><div class="opts" data-q="علاج الجرثومة" data-type="radio">
+<label><input type="radio" name="q2" value="عم آخد علاج هلق">عم آخد علاج هلق</label>
+<label><input type="radio" name="q2" value="خلصت العلاج">خلصت العلاج</label>
+<label><input type="radio" name="q2" value="ما بلشت علاج">ما بلشت علاج</label></div></div>
+<div class="q"><label>3. شو الأدوية بالضبط (إذا في)؟ وعملتي تحليل بعد العلاج؟</label><textarea data-q="أدوية الجرثومة وتحليل بعد العلاج"></textarea></div>
+<div class="q"><span class="t">4. شو الأعراض اللي بتصير معك؟ <span class="hint">(فيكي تختاري أكتر من وحدة)</span></span><div class="opts" data-q="أعراض المعدة" data-type="check">
+<label><input type="checkbox" value="حرقة">حرقة</label>
+<label><input type="checkbox" value="نفخة">نفخة</label>
+<label><input type="checkbox" value="غثيان">غثيان</label>
+<label><input type="checkbox" value="إسهال">إسهال</label>
+<label><input type="checkbox" value="إمساك">إمساك</label>
+<label><input type="checkbox" value="ما في أعراض">ما في أعراض</label></div></div>
+<div class="q"><label>5. الأكل الحار أو القهوة أو الحامض (بندورة، ليمون) بيضروكي؟</label><textarea data-q="الحار والقهوة والحامض"></textarea></div>
+</section>
+
+<section>
+<h2>الكورتيزول والهرمونات</h2>
+<div class="q"><label>6. ارتفاع الكورتيزول انكشف بتحليل دم؟ شو قال الدكتور؟ <span class="hint">(إذا عندك صورة التحليل ابعتيلي ياها على واتساب بعد الإرسال)</span></label><textarea data-q="الكورتيزول وكلام الدكتور"></textarea></div>
+<div class="q"><label>7. عملتي تحليل غدة (TSH) وسكر؟ شو النتيجة؟</label><textarea data-q="تحليل الغدة والسكر"></textarea></div>
+<div class="q"><span class="t">8. الدورة منتظمة؟</span><div class="opts" data-q="الدورة" data-type="radio">
+<label><input type="radio" name="q8" value="منتظمة">منتظمة</label>
+<label><input type="radio" name="q8" value="غير منتظمة">غير منتظمة</label>
+<label><input type="radio" name="q8" value="في تشخيص أكياس على المبيض">في تشخيص أكياس على المبيض</label></div></div>
+<div class="q"><label>9. أقل وزن وصلتيله من هون وهالقت؟ والوزن زاد بفترة معينة أو مع دواء؟</label><textarea data-q="تاريخ الوزن"></textarea></div>
+</section>
+
+<section>
+<h2>الفيتامينات والأدوية</h2>
+<div class="q"><label>10. شو الفيتامينات الناقصة بالضبط؟ وقديش كانت النتيجة؟ <span class="hint">(دال، B12، حديد، زنك...)</span></label><textarea data-q="الفيتامينات الناقصة"></textarea></div>
+<div class="q"><label>11. مين وصفلك الفيتامينات؟ شو الجرعات ومتى بتاخديهم؟</label><textarea data-q="جرعات وأوقات الفيتامينات"></textarea></div>
+<div class="q"><label>12. في أي دواء تاني؟ <span class="hint">(مهدئات، منع حمل، كورتيزون...)</span></label><textarea data-q="أدوية تانية"></textarea></div>
+<div class="q"><label>13. ضغطك طبيعي؟ بيصير معك دوخة أو خفقان مع التعب؟</label><textarea data-q="الضغط والدوخة"></textarea></div>
+</section>
+
+<section>
+<h2>الحساسية والأكل</h2>
+<div class="q"><span class="t">14. الحليب: شو بيصير معك لما تشربيه؟</span><div class="opts" data-q="الحليب" data-type="radio">
+<label><input type="radio" name="q14" value="طفح أو حكة أو ضيق نفس">طفح أو حكة أو ضيق نفس</label>
+<label><input type="radio" name="q14" value="نفخة وغازات بس">نفخة وغازات بس</label>
+<label><input type="radio" name="q14" value="مش متأكدة">مش متأكدة</label></div></div>
+<div class="q"><label>15. اللبنة واللبن واللبن اليوناني بيضروكي؟</label><textarea data-q="اللبنة واللبن"></textarea></div>
+<div class="q"><label>16. القشقوان بتاكليه بدون مشاكل؟ وأي جبنات ممنوعة عليكي بالضبط؟</label><textarea data-q="القشقوان والجبنات"></textarea></div>
+<div class="q"><label>17. البيض: بس المسلوق بيضرك ولا كل أشكاله (عجة، مقلي، بياض البيض)؟ شو بيصير معك؟</label><textarea data-q="البيض"></textarea></div>
+<div class="q"><label>18. الورقيات: حساسية ولا ما بتحبيها؟ البقدونس والنعناع بالأكل المطبوخ؟ البروكلي والملفوف؟</label><textarea data-q="الورقيات"></textarea></div>
+<div class="q"><label>19. في حساسية من سمك، مكسرات، قمح، أو فول سوداني؟</label><textarea data-q="حساسيات تانية"></textarea></div>
+<div class="q"><span class="t">20. شو البروتين اللي بتحبيه؟</span><div class="opts" data-q="البروتين المفضل" data-type="check">
+<label><input type="checkbox" value="دجاج">دجاج</label>
+<label><input type="checkbox" value="لحمة">لحمة</label>
+<label><input type="checkbox" value="سمك">سمك</label>
+<label><input type="checkbox" value="تونة">تونة</label>
+<label><input type="checkbox" value="بيض (غير مسلوق)">بيض (غير مسلوق)</label></div></div>
+<div class="q"><label>21. مين بيطبخ بالبيت؟ بتقدري تحضري أكلك لحالك؟</label><textarea data-q="الطبخ"></textarea></div>
+<div class="q"><label>22. ليش وجبتين بس؟ ما في شهية الصبح؟ في أكل ليلي أو أكل من التوتر؟</label><textarea data-q="الوجبات والشهية"></textarea></div>
+<div class="q"><label>23. شو الحلويات والمشروبات اللي بتاخديها وقديش؟ <span class="hint">(متة، قهوة، عصير، غازية)</span></label><textarea data-q="الحلويات والمشروبات"></textarea></div>
+<div class="q"><label>24. ليش المي لتر بس؟ ما بتحسي بالعطش ولا بتنسي؟</label><textarea data-q="المي"></textarea></div>
+</section>
+
+<section>
+<h2>التوتر والنوم</h2>
+<div class="q"><label>25. شو سبب التوتر الأكبر هلق؟ بيخليكي تاكلي أكتر أو أقل؟</label><textarea data-q="التوتر"></textarea></div>
+<div class="q"><label>26. ليش النوم متوسط؟ <span class="hint">(صعوبة نوم، صحيان بالليل، موبايل قبل النوم)</span></label><textarea data-q="النوم"></textarea></div>
+</section>
+
+<section>
+<h2>التدريب والهدف</h2>
+<div class="q"><label>27. شو اللي ما عجبك مع المدرب السابق؟ وشو بدك مني لتحسي بالاهتمام؟</label><textarea data-q="المدرب السابق"></textarea></div>
+<div class="q"><label>28. في أي ألم بالركب أو أسفل الظهر مع الدرج أو المشي الطويل؟</label><textarea data-q="ألم الركب والظهر"></textarea></div>
+<div class="q"><label>29. شو المناسبة بعد شهر ونص؟ وشو النتيجة اللي بتفرحك وقتها؟ <span class="hint">(مقاسات، لبسة معينة...)</span></label><textarea data-q="المناسبة"></textarea></div>
+<div class="q"><label>ملاحظات إضافية بدك تقوليلي ياها</label><textarea data-q="ملاحظات"></textarea></div>
+</section>
+<p class="note">معلوماتك بتوصل لجورج بس. هالاستمارة مش بديل عن الطبيب.</p>
+</form>
+</div>
+<div class="send"><button type="button" id="sendBtn">إرسال الأجوبة على واتساب ✓</button></div>
+
+<script>
+(function(){
+  var WA = "963987461750";
+  var form = document.getElementById("f");
+  var bar = document.getElementById("bar");
+  var KEY = "gm-q-lujain";
+  var blocks = [].slice.call(form.querySelectorAll("[data-q]"));
+
+  function valueOf(el){
+    var t = el.getAttribute("data-type");
+    if (t === "radio"){ var r = el.querySelector("input:checked"); return r ? r.value : ""; }
+    if (t === "check"){ return [].slice.call(el.querySelectorAll("input:checked")).map(function(i){return i.value;}).join("، "); }
+    return el.value.trim();
+  }
+  function progress(){
+    var done = blocks.filter(function(b){ return valueOf(b); }).length;
+    bar.style.width = Math.round(done / blocks.length * 100) + "%";
+  }
+  function save(){
+    try {
+      var data = {};
+      blocks.forEach(function(b, i){
+        var t = b.getAttribute("data-type");
+        data[i] = t ? [].slice.call(b.querySelectorAll("input")).map(function(x){return x.checked;}) : b.value;
+      });
+      localStorage.setItem(KEY, JSON.stringify(data));
+    } catch(e){}
+  }
+  function load(){
+    try {
+      var data = JSON.parse(localStorage.getItem(KEY) || "null");
+      if (!data) return;
+      blocks.forEach(function(b, i){
+        if (!(i in data)) return;
+        var t = b.getAttribute("data-type");
+        if (t){ var ins = b.querySelectorAll("input"); data[i].forEach(function(c, j){ if (ins[j]) ins[j].checked = c; }); }
+        else b.value = data[i];
+      });
+    } catch(e){}
+  }
+  load(); progress();
+  form.addEventListener("input", function(){ progress(); save(); });
+  form.addEventListener("change", function(){ progress(); save(); });
+
+  document.getElementById("sendBtn").addEventListener("click", function(){
+    var name = document.getElementById("name");
+    var err = document.getElementById("nameErr");
+    if (!name.value.trim()){ err.style.display = "block"; name.focus(); return; }
+    err.style.display = "none";
+    var lines = ["📝 أجوبة استمارة قبل البدء — برايفت GYM APEX", ""];
+    blocks.forEach(function(b){
+      var v = valueOf(b);
+      lines.push("▪️ " + b.getAttribute("data-q") + ": " + (v || "—"));
+    });
+    var url = "https://wa.me/" + WA + "?text=" + encodeURIComponent(lines.join("\n"));
+    window.location.href = url;
+  });
+})();
+</script>
+</body>
+</html>
