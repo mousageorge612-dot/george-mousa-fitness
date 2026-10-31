@@ -475,8 +475,8 @@ initDays();restoreDraft();showStep();
 // Direct form links: /?join=apex-solo | apex-duo | monthly | 3months | 6months
 (function(){
   const JOIN = {
-    "apex-solo": ["برايفت GYM APEX — فردي", "60$ شهرياً"],
-    "apex-duo": ["برايفت GYM APEX — ثنائي", "60$ شهرياً مقسومة (30$ للشخص)"],
+    "apex-solo": ["برايفت GYM APEX — فردي", "60$ لمدة 6 أسابيع"],
+    "apex-duo": ["برايفت GYM APEX — ثنائي", "60$ لمدة 6 أسابيع مقسومة (30$ للشخص)"],
     "monthly": ["الباقة الشهرية", "49$"],
     "3months": ["باقة 3 أشهر", "99$"],
     "6months": ["باقة 6 أشهر", "149$"]
