@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>استمارة نظام غذائي | George Mousa</title>
+<meta name="description" content="استمارة طلب نظام غذائي مخصص من الكوتش جورج موسى، حسب هدفك وتدريبك ونمط حياتك.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="https://georgemousa.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://georgemousa.com/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#ffb800;--bg:#000;--card:#111;--line:#262626;--muted:#b8b8b8}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:#fff;font-family:Cairo,"SF Pro Display",-apple-system,system-ui,sans-serif;line-height:1.7}
+.wrap{max-width:720px;margin:0 auto;padding:24px 16px 130px}
+header{text-align:center;margin-bottom:12px}
+header img{height:42px}
+.en{font-family:"SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;letter-spacing:.14em;font-size:.75rem;color:var(--gold);font-weight:700}
+h1{font-size:1.55rem;margin:6px 0 4px;font-weight:900}
+h1 span{color:var(--gold)}
+.lead{color:var(--muted);font-size:.95rem;margin:0}
+.progress{position:sticky;top:0;z-index:5;background:#000;padding:10px 0}
+.bar{height:6px;background:#1a1a1a;border-radius:9px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .3s}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin:16px 0}
+section h2{margin:0 0 4px;font-size:1.1rem;color:var(--gold)}
+.q{margin:14px 0}
+.q>label,.q>.t{display:block;font-weight:700;margin-bottom:6px}
+.hint{color:var(--muted);font-size:.85rem;font-weight:400}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+@media(max-width:520px){.row{grid-template-columns:1fr}}
+input[type=text],input[type=tel],input[type=number],input[type=time],select,textarea{width:100%;background:#000;color:#fff;border:1px solid #333;border-radius:10px;padding:10px 12px;font:inherit;min-height:46px}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#ffb800 50%),linear-gradient(135deg,#ffb800 50%,transparent 50%);background-position:16px 50%,22px 50%;background-size:6px 6px;background-repeat:no-repeat}
+textarea{min-height:76px;resize:vertical}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--gold);border-color:transparent}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts label{display:flex;align-items:center;gap:6px;background:#000;border:1px solid #333;border-radius:999px;padding:7px 13px;cursor:pointer;font-weight:600;font-size:.92rem}
+.opts input{accent-color:var(--gold)}
+.opts label:has(input:checked){border-color:var(--gold);color:var(--gold)}
+.bad{outline:2px solid #ff6b6b;border-radius:12px}
+.notice{background:rgba(255,184,0,.08);border:1px solid rgba(255,184,0,.35);border-radius:12px;padding:10px 12px;font-size:.88rem;color:#ffd979}
+.note{font-size:.85rem;color:var(--muted);text-align:center;margin-top:12px}
+.send{position:fixed;inset:auto 0 0 0;background:linear-gradient(transparent,#000 35%);padding:24px 16px 16px}
+.send button{display:block;width:100%;max-width:720px;margin:0 auto;background:var(--gold);color:#000;border:0;border-radius:14px;padding:14px;font:900 1.05rem Cairo,sans-serif;cursor:pointer}
+.err{color:#ff6b6b;font-size:.92rem;display:none;text-align:center;margin:0 auto 8px;max-width:720px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<a href="https://georgemousa.com"><img src="https://georgemousa.com/assets/images/logo.png" alt="George Mousa"></a>
+<div class="en">NUTRITION PLAN</div>
+<h1>استمارة <span>النظام الغذائي</span></h1>
+<p class="lead">عبّي الأسئلة، وبالآخر اضغط إرسال، وبتوصلني كل معلوماتك على واتساب لجهزلك نظام أكل مخصص حسب هدفك وتدريبك ويومك.</p>
+</header>
+<div class="progress"><div class="bar"><i id="bar"></i></div></div>
+
+<form id="f" novalidate>
+<section>
+<h2>1. معلوماتك</h2>
+<div class="q"><label>الاسم الكامل *</label><input type="text" data-q="الاسم" data-req></div>
+<div class="row">
+<div class="q"><label>العمر *</label><input type="number" inputmode="numeric" min="12" max="90" data-q="العمر" data-req></div>
+<div class="q"><span class="t">الجنس *</span><div class="opts" data-q="الجنس" data-type="radio" data-req>
+<label><input type="radio" name="gender" value="ذكر">ذكر</label>
+<label><input type="radio" name="gender" value="أنثى">أنثى</label></div></div>
+</div>
+<div class="row">
+<div class="q"><label>الطول (سم) *</label><input type="number" inputmode="numeric" data-q="الطول (سم)" data-req></div>
+<div class="q"><label>الوزن (كغ) *</label><input type="number" inputmode="decimal" step=".1" data-q="الوزن (كغ)" data-req></div>
+</div>
+<div class="row">
+<div class="q"><label>المدينة / الدولة *</label><input type="text" data-q="المدينة / الدولة" data-req></div>
+<div class="q"><label>رقم واتساب *</label><input type="tel" dir="ltr" data-q="واتساب" data-req></div>
+</div>
+</section>
+
+<section>
+<h2>2. هدفك</h2>
+<div class="q"><span class="t">الهدف الرئيسي *</span><div class="opts" data-q="الهدف" data-type="radio" data-req>
+<label><input type="radio" name="goal" value="خسارة دهون">خسارة دهون</label>
+<label><input type="radio" name="goal" value="زيادة كتلة عضلية">زيادة كتلة عضلية</label>
+<label><input type="radio" name="goal" value="شد وإعادة تشكيل الجسم">شد وإعادة تشكيل الجسم</label>
+<label><input type="radio" name="goal" value="زيادة وزن">زيادة وزن</label>
+<label><input type="radio" name="goal" value="أكل صحي وتثبيت الوزن">أكل صحي وتثبيت الوزن</label></div></div>
+<div class="row">
+<div class="q"><label>الوزن المستهدف <span class="hint">(إن وجد)</span></label><input type="text" data-q="الوزن المستهدف"></div>
+<div class="q"><label>خلال قديش وقت؟</label><input type="text" placeholder="مثال: 3 أشهر" data-q="المدة المطلوبة"></div>
+</div>
+</section>
+
+<section>
+<h2>3. التدريب</h2>
+<div class="q"><span class="t">نوع التدريب اللي بتعمله *</span><div class="opts" data-q="نوع التدريب" data-type="radio" data-req id="trainType">
+<label><input type="radio" name="tt" value="مقاومة (حديد / أوزان)">مقاومة (حديد)</label>
+<label><input type="radio" name="tt" value="كارديو">كارديو</label>
+<label><input type="radio" name="tt" value="مقاومة + كارديو">مقاومة + كارديو</label>
+<label><input type="radio" name="tt" value="ما بتمرن حالياً">ما بتمرن حالياً</label></div></div>
+<div id="trainDetails">
+<div class="q"><span class="t">عدد أيام التدريب بالأسبوع *</span><div class="opts" data-q="عدد أيام التدريب" data-type="radio" data-req-train>
+<label><input type="radio" name="dc" value="1">1</label><label><input type="radio" name="dc" value="2">2</label><label><input type="radio" name="dc" value="3">3</label><label><input type="radio" name="dc" value="4">4</label><label><input type="radio" name="dc" value="5">5</label><label><input type="radio" name="dc" value="6">6</label><label><input type="radio" name="dc" value="7">7</label></div></div>
+<div class="q"><span class="t">أيام التدريب *</span><div class="opts" data-q="أيام التدريب" data-type="check" data-req-train>
+<label><input type="checkbox" value="السبت">السبت</label><label><input type="checkbox" value="الأحد">الأحد</label><label><input type="checkbox" value="الاثنين">الاثنين</label><label><input type="checkbox" value="الثلاثاء">الثلاثاء</label><label><input type="checkbox" value="الأربعاء">الأربعاء</label><label><input type="checkbox" value="الخميس">الخميس</label><label><input type="checkbox" value="الجمعة">الجمعة</label></div></div>
+<div class="q" id="cardioQ"><label>إذا بتعمل كارديو: شو نوعه وقديش مدته؟</label><input type="text" placeholder="مثال: مشي سريع 30 دقيقة، جري، دراجة..." data-q="تفاصيل الكارديو"></div>
+<div class="row">
+<div class="q"><label>وقت التمرين *</label><input type="time" data-q="وقت التمرين" data-req-train></div>
+<div class="q"><label>مدة التمرين</label><select data-q="مدة التمرين"><option value="">اختر...</option><option>30 دقيقة</option><option>45 دقيقة</option><option>60 دقيقة</option><option>75 دقيقة</option><option>أكثر من 75 دقيقة</option></select></div>
+</div>
+<div class="row">
+<div class="q"><label>مكان التدريب</label><select data-q="مكان التدريب"><option value="">اختر...</option><option>نادي</option><option>منزل</option><option>نادي + منزل</option><option>خارجي (مشي / جري)</option></select></div>
+<div class="q"><label>مستوى الخبرة</label><select data-q="مستوى الخبرة"><option value="">اختر...</option><option>مبتدئ</option><option>متوسط</option><option>متقدم</option></select></div>
+</div>
+</div>
+</section>
+
+<section>
+<h2>4. الصحة</h2>
+<div class="q"><label>أمراض أو حالات صحية <span class="hint">(سكري، ضغط، غدة، كولون، تكيس، جرثومة...)</span></label><textarea data-q="حالات صحية"></textarea></div>
+<div class="row">
+<div class="q"><label>أدوية أو مكملات بتاخدها</label><input type="text" data-q="أدوية ومكملات"></div>
+<div class="q"><label>حساسية أو أكل ممنوع عليك</label><input type="text" data-q="حساسية"></div>
+</div>
+<div class="notice">إذا عندك مرض مزمن أو علاج طبي مستمر، النظام الغذائي ما بيغني عن متابعة الطبيب.</div>
+</section>
+
+<section>
+<h2>5. أكلك الحالي</h2>
+<div class="row">
+<div class="q"><label>كم وجبة بتاكل باليوم؟</label><select data-q="عدد الوجبات حالياً"><option value="">اختر...</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5 أو أكتر</option></select></div>
+<div class="q"><label>كم وجبة بتفضّل بالنظام؟</label><select data-q="عدد الوجبات المفضل"><option value="">اختر...</option><option>2</option><option>3</option><option>4</option><option>5</option><option>متل ما بتشوف</option></select></div>
+</div>
+<div class="q"><label>اكتب شو أكلت يوم كامل عادي *</label><textarea placeholder="الفطور... الغدا... العشا... السناكات" data-q="أكل يوم عادي" data-req></textarea></div>
+<div class="q"><label>أكلات بتحبها وبدك ياها بالنظام</label><input type="text" data-q="أكلات بيحبها"></div>
+<div class="q"><label>أكلات ما بتحبها أو ما بتاكلها</label><input type="text" data-q="أكلات ما بيحبها"></div>
+<div class="row">
+<div class="q"><label>كمية المي يومياً</label><select data-q="المي"><option value="">اختر...</option><option>أقل من لتر</option><option>1 - 2 لتر</option><option>2 - 3 لتر</option><option>أكتر من 3 لتر</option></select></div>
+<div class="q"><label>عندك ميزان أكل؟</label><select data-q="ميزان أكل"><option value="">اختر...</option><option>إي</option><option>لا</option><option>بقدر جيب</option></select></div>
+</div>
+<div class="row">
+<div class="q"><label>مين بيطبخ أكلك؟</label><select data-q="مين بيطبخ"><option value="">اختر...</option><option>أنا</option><option>البيت / العيلة</option><option>بشتري جاهز أغلب الوقت</option></select></div>
+<div class="q"><label>الشهية</label><select data-q="الشهية"><option value="">اختر...</option><option>طبيعية</option><option>قليلة</option><option>عالية / بجوع كتير</option></select></div>
+</div>
+<div class="q"><span class="t">الحلو</span><div class="opts" data-q="الحلو" data-type="radio">
+<label><input type="radio" name="sweet" value="بدي حصة حلو يومية">بدي حصة حلو يومية</label>
+<label><input type="radio" name="sweet" value="مرة أو مرتين بالأسبوع">مرة أو مرتين بالأسبوع</label>
+<label><input type="radio" name="sweet" value="ما بهتم">ما بهتم</label></div></div>
+</section>
+
+<section>
+<h2>6. يومك ونومك</h2>
+<div class="row">
+<div class="q"><label>وقت الاستيقاظ *</label><input type="time" data-q="وقت الاستيقاظ" data-req></div>
+<div class="q"><label>وقت النوم *</label><input type="time" data-q="وقت النوم" data-req></div>
+</div>
+<div class="row">
+<div class="q"><label>الشغل / الدراسة وساعاته</label><input type="text" placeholder="مثال: موظف 8 الصبح لـ 3" data-q="الشغل وساعاته"></div>
+<div class="q"><label>طبيعة يومك</label><select data-q="طبيعة اليوم"><option value="">اختر...</option><option>قاعد أغلب الوقت</option><option>حركة خفيفة</option><option>مجهود متوسط</option><option>مجهود عالي</option></select></div>
+</div>
+<div class="q"><label>شي تاني بدك ياني أعرفه؟</label><textarea data-q="ملاحظات"></textarea></div>
+</section>
+</form>
+<p class="note">معلوماتك بتنحفظ على جهازك لحد ما تبعتها، فيك تكمّل بعدين.</p>
+</div>
+
+<div class="send">
+<div class="err" id="err">في أسئلة مطلوبة ما انعبّت، علّمتلك ياها بالأحمر.</div>
+<button type="button" id="sendBtn">إرسال على واتساب</button>
+</div>
+
+<script>
+(function(){
+  var WA = "963987461750";
+  var KEY = "gm-diet-form-v1";
+  var form = document.getElementById("f");
+  var bar = document.getElementById("bar");
+  var blocks = [].slice.call(form.querySelectorAll("[data-q]"));
+  var details = document.getElementById("trainDetails");
+  var cardioQ = document.getElementById("cardioQ");
+
+  function valueOf(el){
+    var t = el.getAttribute("data-type");
+    if (t === "radio"){ var r = el.querySelector("input:checked"); return r ? r.value : ""; }
+    if (t === "check"){ return [].slice.call(el.querySelectorAll("input:checked")).map(function(i){return i.value;}).join("، "); }
+    return el.value.trim();
+  }
+  function trainType(){ return valueOf(document.getElementById("trainType")); }
+  function trains(){ var t = trainType(); return t && t !== "ما بتمرن حالياً"; }
+  function isReq(b){ return b.hasAttribute("data-req") || (b.hasAttribute("data-req-train") && trains()); }
+  function visible(b){ return !(details.hidden && details.contains(b)) && !(cardioQ.hidden && cardioQ.contains(b)); }
+  function sync(){
+    details.hidden = trainType() === "ما بتمرن حالياً";
+    cardioQ.hidden = trainType().indexOf("كارديو") === -1;
+    var req = blocks.filter(function(b){ return isReq(b) && visible(b); });
+    var done = req.filter(function(b){ return valueOf(b); }).length;
+    bar.style.width = (req.length ? Math.round(done / req.length * 100) : 0) + "%";
+  }
+  function save(){
+    try {
+      var data = blocks.map(function(b){
+        return b.getAttribute("data-type") ? [].slice.call(b.querySelectorAll("input")).map(function(x){return x.checked;}) : b.value;
+      });
+      localStorage.setItem(KEY, JSON.stringify(data));
+    } catch(e){}
+  }
+  function load(){
+    try {
+      var data = JSON.parse(localStorage.getItem(KEY) || "null");
+      if (!data) return;
+      blocks.forEach(function(b, i){
+        if (data[i] == null) return;
+        if (b.getAttribute("data-type")){ var ins = b.querySelectorAll("input"); data[i].forEach(function(c, j){ if (ins[j]) ins[j].checked = c; }); }
+        else b.value = data[i];
+      });
+    } catch(e){}
+  }
+  load(); sync();
+  form.addEventListener("input", function(e){ var b = e.target.closest("[data-q]"); if (b) b.classList.remove("bad"); if (!form.querySelector(".bad")) document.getElementById("err").style.display = "none"; sync(); save(); });
+  form.addEventListener("change", function(e){ var b = e.target.closest("[data-q]"); if (b) b.classList.remove("bad"); if (!form.querySelector(".bad")) document.getElementById("err").style.display = "none"; sync(); save(); });
+
+  document.getElementById("sendBtn").addEventListener("click", function(){
+    var missing = blocks.filter(function(b){ return isReq(b) && visible(b) && !valueOf(b); });
+    blocks.forEach(function(b){ b.classList.toggle("bad", missing.indexOf(b) !== -1); });
+    var err = document.getElementById("err");
+    if (missing.length){
+      err.style.display = "block";
+      missing[0].scrollIntoView({behavior: "smooth", block: "center"});
+      return;
+    }
+    err.style.display = "none";
+    var lines = ["🥗 طلب نظام غذائي فقط — George Mousa", ""];
+    form.querySelectorAll("section").forEach(function(sec){
+      var rows = [].slice.call(sec.querySelectorAll("[data-q]")).filter(function(b){ return visible(b) && valueOf(b); });
+      if (!rows.length) return;
+      lines.push("*" + sec.querySelector("h2").textContent + "*");
+      rows.forEach(function(b){ lines.push("▪️ " + b.getAttribute("data-q") + ": " + valueOf(b)); });
+      lines.push("");
+    });
+    window.location.href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(lines.join("\n"));
+  });
+})();
+</script>
+</body>
+</html>
