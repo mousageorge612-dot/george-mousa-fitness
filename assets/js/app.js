@@ -3,11 +3,11 @@ const WHATSAPP = "963987461750";
 const FREE_PDFS = {
   3: {
     filename: "GM_Arnold_Split_3_Days.pdf",
-    url: "downloads/GM_Arnold_Split_3_Days.pdf"
+    url: "downloads/GM_Arnold_Split_3_Days.pdf?v=20261103b"
   },
   4: {
     filename: "GM_Her_Split_3_Days.pdf",
-    url: "downloads/GM_Her_Split_3_Days.pdf"
+    url: "downloads/GM_Her_Split_3_Days.pdf?v=20261103b"
   }
 };
 
