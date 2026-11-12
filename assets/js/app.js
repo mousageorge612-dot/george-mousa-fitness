@@ -487,3 +487,14 @@ initDays();restoreDraft();showStep();
   if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", open);
   else open();
 })();
+
+
+/* Motion (2026-11-12): hero phone slideshow + scroll reveal */
+(function(){
+  var imgs=[].slice.call(document.querySelectorAll('.hs-screen img')),k=0;
+  if(imgs.length>1&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches))setInterval(function(){imgs[k].classList.remove('on');k=(k+1)%imgs.length;imgs[k].classList.add('on');},2800);
+  if(!('IntersectionObserver' in window))return;
+  var els=[].slice.call(document.querySelectorAll('main .section-head, main .card, main .package-video-banner, main .payment-note, main .faq-item, main details, main .coach-grid > *'));
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  els.forEach(function(el){if(el.closest('.hero')||el.closest('.form-step')||el.closest('[class*=modal]'))return;var r=el.getBoundingClientRect();if(r.top<innerHeight*.9)return;var sib=el.parentNode?[].indexOf.call(el.parentNode.children,el):0;el.style.setProperty('--d',Math.min(sib,4)*0.08+'s');el.classList.add('gm-rv');io.observe(el);});
+})();
