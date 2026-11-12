@@ -1396,3 +1396,22 @@ input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 
 .private-partner{border:1px dashed #4a4a4a;border-radius:14px;padding:12px;margin-bottom:14px}
 
 @media (max-width:700px){.private-plans{grid-template-columns:1fr}}
+
+
+/* Hero v2 + coach app section (2026-11-12) */
+.hero-v2 .hero-grid{grid-template-columns:1fr 1.05fr;gap:24px}
+.hero-v2 h1{font-size:clamp(36px,5.4vw,66px)}
+.hero-phones{position:relative;display:flex;justify-content:center}
+.hero-phones:before{content:"";position:absolute;inset:12%;border-radius:50%;background:radial-gradient(circle,rgba(255,184,0,.30),transparent 68%);filter:blur(34px)}
+.hero-phones img{position:relative;width:112%;max-width:none;height:auto;aspect-ratio:1/1;animation:heroFloat 6s ease-in-out infinite}
+.hero-points{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:26px;max-width:560px}
+.hero-points div{background:rgba(255,255,255,.04);border:1px solid #2a2a2a;border-radius:16px;padding:12px 6px;text-align:center}
+.hero-points b{display:block;color:var(--gold);font-size:22px;line-height:1.2}
+.hero-points span{display:block;font-size:12.5px;font-weight:700;color:#e6e6e6;line-height:1.5;margin-top:4px}
+.app-feats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card.app-feat{text-align:center;padding:16px 14px 20px}
+.card.app-feat > img:not(.logo):not(.footer-logo){width:100% !important;max-width:230px !important;height:auto !important;aspect-ratio:450/920 !important;object-fit:contain !important;background:none !important;border-radius:0 !important;margin:0 auto 6px !important;display:block}
+.app-feat h3{margin:6px 0 6px;font-size:18px;color:var(--gold)}
+.app-feat p{margin:0;color:#cfcfcf;font-size:14px;line-height:1.8}
+@media(max-width:980px){.hero-v2 .hero-grid{grid-template-columns:1fr}.hero-phones img{width:100%}.app-feats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.hero-points{gap:6px}.hero-points span{font-size:11px}.app-feats{gap:10px}.card.app-feat{padding:10px 8px 14px !important}.card.app-feat h3{font-size:15px !important}.card.app-feat p{font-size:12.5px !important;line-height:1.7 !important}}
